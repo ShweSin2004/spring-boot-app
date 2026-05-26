@@ -1,0 +1,32 @@
+package com.talent.batch11.springbootapp.model;
+import com.talent.batch11.springbootapp.model.enumDemo.TransactionType;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+@Entity
+@Data
+@Table(name = "transaction")
+public class Transaction extends AbstractEntity{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @ManyToOne
+    @JoinColumn(name = "account_id")
+    private Account account;
+
+    public Transaction() {
+    }
+
+    @Enumerated(EnumType.STRING)
+    private TransactionType transactionType;
+
+    private double amount;
+    private double previous_amount;
+
+}
