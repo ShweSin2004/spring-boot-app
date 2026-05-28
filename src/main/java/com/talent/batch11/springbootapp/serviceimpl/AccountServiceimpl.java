@@ -5,11 +5,15 @@ import com.talent.batch11.springbootapp.model.Transaction;
 import com.talent.batch11.springbootapp.model.enumDemo.TransactionType;
 import com.talent.batch11.springbootapp.repository.AccountRepository;
 import com.talent.batch11.springbootapp.repository.TransactionRepository;
+import com.talent.batch11.springbootapp.request.RegisterInfo;
+import com.talent.batch11.springbootapp.request.TransferMoneyInfo;
 import com.talent.batch11.springbootapp.service.AccountService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.talent.batch11.springbootapp.request.LoginInfo;
 
+import java.util.List;
 import java.util.Scanner;
 
 @Service
@@ -48,24 +52,19 @@ public class AccountServiceimpl implements AccountService {
 
     @Override
     @Transactional
-    public Account logIn() {
-        System.out.println("Log In\n---------");
-        System.out.print("Enter your email: ");
-        String email = sc.nextLine();
-        if (email == null) {
+    public Account logIn(LoginInfo loginInfo) {
+
+        if (loginInfo.getEmail() == null) {
             System.out.println("Account does not exist.");
             return null;
         }
-        Account findAccount = findByEmail(email);
+        Account findAccount = findByEmail(loginInfo.getEmail());
         if (findAccount == null){
             System.out.println("Account does not exist");
             return null;
         }
 
-        System.out.print("Enter your password: ");
-        String pw = sc.nextLine();
-
-        if (!findAccount.getPassword().equals(pw)) {
+        if (!findAccount.getPassword().equals(loginInfo.getPassword())) {
             System.out.println("Incorrect password.");
             return null;
         }
@@ -76,24 +75,14 @@ public class AccountServiceimpl implements AccountService {
 
     @Override
     @Transactional
-    public Account signUp() {
+    public Account register(RegisterInfo registerInfo) {
         Account signUpAcc = new Account();
 
-        System.out.println("Sign up\n----------");
-        System.out.print("Enter your name: ");
-        signUpAcc.setName(sc.nextLine());
-
-        System.out.print("Enter your email: ");
-        signUpAcc.setEmail(sc.nextLine());
-
-        System.out.print("Enter your phone number: ");
-        signUpAcc.setPhoneNumber(sc.nextLine());
-
-        System.out.print("Enter your password: ");
-        signUpAcc.setPassword(sc.nextLine());
-
-        System.out.print("Enter your address: ");
-        signUpAcc.setAddress(sc.nextLine());
+        signUpAcc.setName(registerInfo.getName());
+        signUpAcc.setEmail(registerInfo.getEmail());
+        signUpAcc.setPassword(registerInfo.getPassword());
+        signUpAcc.setPhoneNumber(registerInfo.getPhoneNumber());
+        signUpAcc.setAddress(registerInfo.getAddress());
 
         signUpAcc.setBalance(0);
 
@@ -103,11 +92,9 @@ public class AccountServiceimpl implements AccountService {
 
     @Override
     @Transactional
-    public void depositMoney(Account account) {
+    public void depositMoney(double amount, Account account) {
         double previous_amount = account.getBalance();
-        System.out.println("Deposit money\n------------");
-        System.out.print("Enter deposit money amount: ");
-        double amount = sc.nextDouble();
+
         account.setBalance(account.getBalance() + amount);
         updateMoney(account.getBalance(), account.getEmail());
 
@@ -121,17 +108,13 @@ public class AccountServiceimpl implements AccountService {
 
     @Override
     @Transactional
-    public void withdrawMoney(Account account) {
+    public void withdrawMoney(double amount, Account account) {
         double previous_amount = account.getBalance();
-        System.out.println("Withdraw money\n------------");
-        System.out.print("Enter withdraw money amount: ");
-        double amount = sc.nextDouble();
 
-        while (amount <= 0) {
-            System.out.println("Amount invalid");
-            System.out.print("Enter withdraw money amount: ");
-            amount = sc.nextDouble();
+        if (amount <= 0) {
+            throw new RuntimeException("Invalid amount.");
         }
+
         account.setBalance(account.getBalance() - amount);
         updateMoney(account.getBalance(), account.getEmail());
 
@@ -145,13 +128,11 @@ public class AccountServiceimpl implements AccountService {
 
     @Override
     @Transactional
-    public void transferMoney(Account account) {
+    public void transferMoney(TransferMoneyInfo transferMoneyInfo, Account account) {
         double accountPreviousAmount = account.getBalance();
-        System.out.println("Transfer money\n---------------");
-        System.out.print("Enter receiver's phone number: ");
-        String receiver_phone = sc.nextLine();
+        double amount = transferMoneyInfo.getAmount();
 
-        Account receiver = accountRepository.findAccountByPhoneNumber(receiver_phone);
+        Account receiver = accountRepository.findAccountByPhoneNumber(transferMoneyInfo.getReceiver_phone());
 
         if (receiver == null) {
             System.out.println("Recipient not found.");
@@ -160,22 +141,12 @@ public class AccountServiceimpl implements AccountService {
 
         double receiverPreviousAmount = receiver.getBalance();
 
-        System.out.print("Enter password: ");
-        String pw = sc.nextLine();
-
-        while(!account.getPassword().equals(pw)) {
-            System.out.println("Incorrect password.");
-            System.out.print("Enter password: ");
-            pw = sc.nextLine();
+        if (!account.getPassword().equals(transferMoneyInfo.getPassword())) {
+            throw new RuntimeException("Incorrect password.");
         }
 
-        System.out.print("Enter amount: ");
-        double amount = sc.nextDouble();
-
-        while (amount <= 0) {
-            System.out.println("Amount invalid");
-            System.out.print("Enter withdraw money amount: ");
-            amount = sc.nextDouble();
+        if (amount <= 0) {
+            throw new RuntimeException("Invalid amount.");
         }
 
         account.setBalance(account.getBalance() - amount);
@@ -199,17 +170,8 @@ public class AccountServiceimpl implements AccountService {
 
     @Override
     @Transactional
-    public void topUp(Account account) {
-        double previous_amount = account.getBalance();
-        System.out.println("Top up\n---------");
-        System.out.print("Enter amount: ");
-        double amount = sc.nextDouble();
-
-        while (amount <= 0) {
-            System.out.println("Amount invalid");
-            System.out.print("Enter withdraw money amount: ");
-            amount = sc.nextDouble();
-        }
+    public void topUp(double amount, Account account) {
+        double previous_amount= account.getBalance();
 
         account.setBalance(account.getBalance() - amount);
         updateMoney(account.getBalance(), account.getEmail());
@@ -220,6 +182,18 @@ public class AccountServiceimpl implements AccountService {
         tx.setPrevious_amount(previous_amount);
         tx.setTransactionType(TransactionType.TOP_UP);
         transactionRepository.save(tx);
+    }
+
+    @Override
+    public List<Account> getAllAccounts() {
+        return accountRepository.findAll();
+    }
+
+    @Override
+    public List<Transaction> getAllTransactionsByAccountId(long accountId) {
+
+        Account account = accountRepository.findAccountById(accountId);
+        return  account.getTransactions();
     }
 
 }

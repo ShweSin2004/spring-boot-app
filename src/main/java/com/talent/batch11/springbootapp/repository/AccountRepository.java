@@ -10,4 +10,5 @@ public interface AccountRepository extends JpaRepository<Account,Integer> {
 
     Account findAccountByPhoneNumber(String phoneNumber);
 
+    Account findAccountById(long accountId);
 }

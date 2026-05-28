@@ -15,15 +15,14 @@ public abstract class AbstractEntity {
     @CreationTimestamp
     @Column(nullable = false)
     private LocalDateTime createdAt;
-    @Column(nullable = false)
     private String createdBy;
 
     @UpdateTimestamp
     @Column(nullable = false)
     private LocalDateTime updatedAt;
-    @Column(nullable = false)
     private String updatedBy;
 
     private LocalDateTime deletedAt;
     private String deletedBy;
+
 }

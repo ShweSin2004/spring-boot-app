@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1>Dashboard</h1>
+
+<div class="logout">
+    <span></span>
+    <a th:href="@{/logout}" class="btn">Logout</a>
+</div>
+
+        <div class="accountinfo">
+            <h2 >Your Information</h2>
+            <table>
+                <tr><th>ID</th><td th:text="${currentAccount.id}"></td></tr>
+                <tr><th>Name</th><td th:text="${currentAccount.name}"></td></tr>
+                <tr><th>Email</th><td th:text="${currentAccount.email}"></td></tr>
+                <tr><th>Address</th><td th:text="${currentAccount.address}"></td></tr>
+                <tr><th>Phone</th><td th:text="${currentAccount.phoneNumber}"></td></tr>
+                <tr><th>Balance</th><td th:text="${#numbers.formatDecimal(currentAccount.balance, 1, 2)}"></td></tr>
+            </table>
+
+            <!--            <form th:action="@{/saveInfo}" method="post" class="mb-2">-->
+            <!--                <button type="submit" class="btn btn-secondary btn-sm">Save Your Infos</button>-->
+            <!--            </form>-->
+        </div>
+
+        <h2 class="h5">Services</h2>
+
+        <div class="services">
+            <div class="service-info">
+                <form th:action="@{/deposit}" method="post" class="service">
+                    <h3 class="h6">Deposit Money</h3>
+                    <input type="number" step="0.01" min="0.01" name="amount" placeholder="Amount" required>
+                    <button type="submit" class="btn">Deposit</button>
+                </form>
+            </div>
+                <div class="service-info">
+                    <form th:action="@{/withdraw}" method="post" class="service">
+                        <h3 class="h6">Withdraw Money</h3>
+                        <input type="number" step="0.01" min="0.01" name="amount" placeholder="Amount" required>
+                        <button type="submit" class="btn">Withdraw</button>
+                    </form>
+                </div>
+                <div class="service-info">
+                    <form th:action="@{/transfer}"  th:object="${transferMoneyInfo}" method="post" class="service" >
+                        <h3 class="h6">Transfer Money</h3>
+                        <input type="text" name="receiver_phone" placeholder="Receiver phone number" required>
+                        <input type="number" step="0.01" min="0.01" name="amount" placeholder="Amount" required>
+                        <input type="password" name="password" placeholder="Your password" required>
+                        <button type="submit" class="btn">Transfer</button>
+                    </form>
+                </div>
+                <div class="service-info">
+                    <form th:action="@{/topup}" method="post" class="service">
+                        <h3 class="h6">Top Up</h3>
+                        <input type="number" step="0.01" min="0.01" name="amount" placeholder="Amount" required>
+                        <button type="submit" class="btn">Top Up</button>
+                    </form>
+                </div>
+        </div>
+
+    <h2 >Recent Transactions</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Created At</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Previous Balance</th>
+        </tr>
+        <tbody>
+        <tr th:if="${#lists.isEmpty(transactions)}">
+            <td colspan="5" class="text-center">No transaction history.</td>
+        </tr>
+        <tr th:each="tx : ${transactions}">
+            <td th:text="${tx.id}"></td>
+            <td th:text="${#temporals.format(tx.createdAt, 'dd MMM yyyy, hh:mm:ss a')}"></td>
+            <td th:text="${tx.transactionType}"></td>
+            <td th:text="${#numbers.formatDecimal(tx.amount, 1, 2)}"></td>
+            <td th:text="${#numbers.formatDecimal(tx.previous_amount, 1, 2)}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2 >All Accounts</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Balance</th>
+        </tr>
+        <tbody>
+        <tr th:each="account : ${allaccount}">
+            <td th:text="${account.id}"></td>
+            <td th:text="${account.name}"></td>
+            <td th:text="${account.email}"></td>
+            <td th:text="${account.phoneNumber}"></td>
+            <td th:text="${#numbers.formatDecimal(account.balance, 1, 2)}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>

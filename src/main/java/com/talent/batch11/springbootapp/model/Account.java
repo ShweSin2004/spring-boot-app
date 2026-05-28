@@ -30,8 +30,8 @@ public class Account extends AbstractEntity{
     private String phoneNumber;
 
     private double balance;
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL
+            , orphanRemoval = true)
+    private List<Transaction> transactions = new ArrayList<>();
 
-    public Account() {
-
-    }
 }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>ATM Management System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <h1>ATM Management System</h1>
+    <div class="container">
+        <h2>Login Account</h2>
+
+        <form action="#" th:action="@{/login}" th:object="${logininfo}"
+              method="POST">
+
+            <input type="text"
+                   th:field="*{email}" placeholder="Enter your email"
+                   class="form-control mb-4 col-4" required>
+            <input type="password"
+                   th:field="*{password}" placeholder="Enter password"
+                   class="form-control mb-4 col-4" required>
+
+            <button type="submit" class="btn">Log In</button>
+        </form>
+    </div>
+</body>
+</html>

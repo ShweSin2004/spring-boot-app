@@ -7,6 +7,8 @@ import com.talent.batch11.springbootapp.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TransactionServiceimpl implements TransactionService {
     @Autowired
@@ -19,7 +21,13 @@ public class TransactionServiceimpl implements TransactionService {
     }
 
     @Override
-    public void viewHistory(Account account) {
-        transactionRepository.getAllByAccountId(account.getId());
+    public void viewAllHistory(Account account) {
+        for (int i = 0; i < account.getTransactions().size(); i++) {
+            Transaction tx = account.getTransactions().get(i);
+            System.out.printf(
+                    "ID: %d | Date: %s | Type: %s | Amount: %.2f | Previous Balance: %.2f%n",
+                    tx.getId(), tx.getCreatedAt(), tx.getTransactionType(), tx.getAmount(), tx.getPrevious_amount()
+            );
+        }
     }
 }

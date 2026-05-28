@@ -12,16 +12,13 @@ import java.time.format.DateTimeFormatter;
 @Table(name = "transaction")
 public class Transaction extends AbstractEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
     @ManyToOne
     @JoinColumn(name = "account_id")
     private Account account;
 
-    public Transaction() {
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @Enumerated(EnumType.STRING)
     private TransactionType transactionType;
