@@ -34,6 +34,7 @@
         <th>Email</th>
         <th>Phone Number</th>
         <th>Balance</th>
+        <th>Role</th>
     </tr>
     <tbody>
     <tr th:each="account : ${allaccount}">
@@ -42,6 +43,7 @@
         <td th:text="${account.email}"></td>
         <td th:text="${account.phoneNumber}"></td>
         <td th:text="${#numbers.formatDecimal(account.balance, 1, 2)}"></td>
+        <td th:text="${account.role}"></td>
     </tr>
     </tbody>
 </table>
