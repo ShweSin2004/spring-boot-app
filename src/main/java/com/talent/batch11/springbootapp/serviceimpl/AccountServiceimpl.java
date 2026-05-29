@@ -60,13 +60,11 @@ public class AccountServiceimpl implements AccountService {
         }
         Account findAccount = findByEmail(loginInfo.getEmail());
         if (findAccount == null){
-            System.out.println("Account does not exist");
-            return null;
+            throw new RuntimeException("Account not found.");
         }
 
         if (!findAccount.getPassword().equals(loginInfo.getPassword())) {
-            System.out.println("Incorrect password.");
-            return null;
+            throw new RuntimeException("Incorrect password.");
         }
 
         System.out.println("Logged in successfully!");
@@ -95,6 +93,10 @@ public class AccountServiceimpl implements AccountService {
     public void depositMoney(double amount, Account account) {
         double previous_amount = account.getBalance();
 
+        if (amount <= 0) {
+            throw new RuntimeException("Invalid amount.");
+        }
+
         account.setBalance(account.getBalance() + amount);
         updateMoney(account.getBalance(), account.getEmail());
 
@@ -111,7 +113,7 @@ public class AccountServiceimpl implements AccountService {
     public void withdrawMoney(double amount, Account account) {
         double previous_amount = account.getBalance();
 
-        if (amount <= 0) {
+        if (amount <= 0 || amount > account.getBalance()) {
             throw new RuntimeException("Invalid amount.");
         }
 
@@ -145,7 +147,7 @@ public class AccountServiceimpl implements AccountService {
             throw new RuntimeException("Incorrect password.");
         }
 
-        if (amount <= 0) {
+        if (amount <= 0 || amount > account.getBalance()) {
             throw new RuntimeException("Invalid amount.");
         }
 
@@ -172,6 +174,10 @@ public class AccountServiceimpl implements AccountService {
     @Transactional
     public void topUp(double amount, Account account) {
         double previous_amount= account.getBalance();
+
+        if (amount <= 0 || amount > account.getBalance()) {
+            throw new RuntimeException("Invalid amount.");
+        }
 
         account.setBalance(account.getBalance() - amount);
         updateMoney(account.getBalance(), account.getEmail());
