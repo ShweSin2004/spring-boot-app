@@ -51,6 +51,11 @@ public class AccountServiceimpl implements AccountService {
     }
 
     @Override
+    public void deleteAcc(Account account) {
+        accountRepository.delete(account);
+    }
+
+    @Override
     @Transactional
     public Account logIn(LoginInfo loginInfo) {
 

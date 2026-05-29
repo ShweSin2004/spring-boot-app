@@ -13,7 +13,7 @@ public interface AccountService {
     public Account findByEmail(String email);
     public Account findByPhone(String phone_number);
     public void updateMoney(double updatedMoney, String email);
-
+    public void deleteAcc(Account account);
 
     public Account logIn(LoginInfo loginInfo);
     public Account register(RegisterInfo registerInfo);

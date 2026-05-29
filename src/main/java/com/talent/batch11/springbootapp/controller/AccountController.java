@@ -42,9 +42,14 @@ public class AccountController {
         session.setAttribute("accountInfo", account);
 
         if (account.getRole().equalsIgnoreCase("admin")) {
+            account.setRole("Admin");
             return "redirect:/admindashboard";
-        } else {
+        } else if(account.getRole().equalsIgnoreCase("user")) {
+            account.setRole("User");
             return "redirect:/dashboard";
+        } else {
+            accountService.deleteAcc(account);
+            return "redirect:/register";
         }
     }
 
