@@ -8,6 +8,6 @@ import java.util.List;
 public interface TransactionService {
     public void saveTransactions(Transaction transaction);
 
-    public void viewAllHistory(Account account);
+    public List<Transaction> getAllTransactions();
 
 }

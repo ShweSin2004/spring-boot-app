@@ -81,6 +81,7 @@ public class AccountServiceimpl implements AccountService {
         signUpAcc.setPassword(registerInfo.getPassword());
         signUpAcc.setPhoneNumber(registerInfo.getPhoneNumber());
         signUpAcc.setAddress(registerInfo.getAddress());
+        signUpAcc.setRole(registerInfo.getRole());
 
         signUpAcc.setBalance(0);
 
@@ -194,6 +195,7 @@ public class AccountServiceimpl implements AccountService {
     public List<Account> getAllAccounts() {
         return accountRepository.findAll();
     }
+
 
     @Override
     public List<Transaction> getAllTransactionsByAccountId(long accountId) {

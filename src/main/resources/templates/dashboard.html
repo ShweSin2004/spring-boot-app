@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h1>Dashboard</h1>
+<h1>User Dashboard</h1>
 
 <div class="logout">
     <span></span>
@@ -24,10 +24,6 @@
                 <tr><th>Phone</th><td th:text="${currentAccount.phoneNumber}"></td></tr>
                 <tr><th>Balance</th><td th:text="${#numbers.formatDecimal(currentAccount.balance, 1, 2)}"></td></tr>
             </table>
-
-            <!--            <form th:action="@{/saveInfo}" method="post" class="mb-2">-->
-            <!--                <button type="submit" class="btn btn-secondary btn-sm">Save Your Infos</button>-->
-            <!--            </form>-->
         </div>
 
         <h2 class="h5">Services</h2>
@@ -65,7 +61,7 @@
                 </div>
         </div>
 
-    <h2 >Recent Transactions</h2>
+    <h2 >Transactions</h2>
     <table>
         <tr>
             <th>ID</th>
@@ -84,26 +80,6 @@
             <td th:text="${tx.transactionType}"></td>
             <td th:text="${#numbers.formatDecimal(tx.amount, 1, 2)}"></td>
             <td th:text="${#numbers.formatDecimal(tx.previous_amount, 1, 2)}"></td>
-        </tr>
-        </tbody>
-    </table>
-
-    <h2 >All Accounts</h2>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-            <th>Balance</th>
-        </tr>
-        <tbody>
-        <tr th:each="account : ${allaccount}">
-            <td th:text="${account.id}"></td>
-            <td th:text="${account.name}"></td>
-            <td th:text="${account.email}"></td>
-            <td th:text="${account.phoneNumber}"></td>
-            <td th:text="${#numbers.formatDecimal(account.balance, 1, 2)}"></td>
         </tr>
         </tbody>
     </table>

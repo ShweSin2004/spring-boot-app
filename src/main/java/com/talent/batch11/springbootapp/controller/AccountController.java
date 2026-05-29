@@ -4,6 +4,7 @@ import com.talent.batch11.springbootapp.model.Account;
 import com.talent.batch11.springbootapp.request.RegisterInfo;
 import com.talent.batch11.springbootapp.request.TransferMoneyInfo;
 import com.talent.batch11.springbootapp.serviceimpl.AccountServiceimpl;
+import com.talent.batch11.springbootapp.serviceimpl.TransactionServiceimpl;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,8 @@ import com.talent.batch11.springbootapp.request.LoginInfo;
 public class AccountController {
     @Autowired
     AccountServiceimpl accountService;
+    @Autowired
+    private TransactionServiceimpl transactionServiceimpl;
 
     @GetMapping("/")
     public String viewHomePage(Model model) {
@@ -37,7 +40,12 @@ public class AccountController {
 
         Account account = accountService.register(registerInfo);
         session.setAttribute("accountInfo", account);
-        return  "redirect:/dashboard";
+
+        if (account.getRole().equalsIgnoreCase("admin")) {
+            return "redirect:/admindashboard";
+        } else {
+            return "redirect:/dashboard";
+        }
     }
 
     @GetMapping("/login")
@@ -53,9 +61,17 @@ public class AccountController {
     public String loginAccount(@ModelAttribute("logininfo") LoginInfo loginInfo, HttpSession session) {
 
         Account account = accountService.logIn(loginInfo);
+        if (account == null) {
+            return "login";
+        }
         session.setAttribute("accountInfo", account);
 
-        return  "redirect:/dashboard";
+        if (account.getRole().equalsIgnoreCase("admin")) {
+            return "redirect:/admindashboard";
+        } else {
+            return "redirect:/dashboard";
+        }
+
     }
 
     @GetMapping("/logout")
@@ -70,10 +86,8 @@ public class AccountController {
 
         Account loginAccount = (Account) session.getAttribute("accountInfo");
         model.addAttribute("currentAccount", loginAccount);
-        model.addAttribute("allaccount", accountService.getAllAccounts());
         model.addAttribute("transactions",
-                accountService.getAllTransactionsByAccountId(loginAccount.getId
-                        ()));
+                accountService.getAllTransactionsByAccountId(loginAccount.getId()));
         return "dashboard";
     }
 
@@ -108,4 +122,13 @@ public class AccountController {
         return  "redirect:/dashboard";
     }
 
+    @GetMapping("/admindashboard")
+    public String adminDashboard(Model model, HttpSession session) {
+
+        Account loginAccount = (Account) session.getAttribute("accountInfo");
+        model.addAttribute("currentAccount", loginAccount);
+        model.addAttribute("allaccount", accountService.getAllAccounts());
+        model.addAttribute("transactions", transactionServiceimpl.getAllTransactions());
+        return "admindashboard";
+    }
 }
