@@ -5,13 +5,13 @@ import com.talent.batch11.springbootapp.model.Transaction;
 import com.talent.batch11.springbootapp.model.enumDemo.TransactionType;
 import com.talent.batch11.springbootapp.repository.AccountRepository;
 import com.talent.batch11.springbootapp.repository.TransactionRepository;
-import com.talent.batch11.springbootapp.request.RegisterInfo;
-import com.talent.batch11.springbootapp.request.TransferMoneyInfo;
+import com.talent.batch11.springbootapp.dto.request.RegisterInfo;
+import com.talent.batch11.springbootapp.dto.request.TransferMoneyInfo;
 import com.talent.batch11.springbootapp.service.AccountService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.talent.batch11.springbootapp.request.LoginInfo;
+import com.talent.batch11.springbootapp.dto.request.LoginInfo;
 
 import java.util.List;
 import java.util.Scanner;
@@ -194,6 +194,11 @@ public class AccountServiceimpl implements AccountService {
         tx.setPrevious_amount(previous_amount);
         tx.setTransactionType(TransactionType.TOP_UP);
         transactionRepository.save(tx);
+    }
+
+    @Override
+    public Account getAccountById(long id) {
+        return accountRepository.findAccountById(id);
     }
 
     @Override

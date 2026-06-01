@@ -1,8 +1,8 @@
 package com.talent.batch11.springbootapp.controller;
 
 import com.talent.batch11.springbootapp.model.Account;
-import com.talent.batch11.springbootapp.request.RegisterInfo;
-import com.talent.batch11.springbootapp.request.TransferMoneyInfo;
+import com.talent.batch11.springbootapp.dto.request.RegisterInfo;
+import com.talent.batch11.springbootapp.dto.request.TransferMoneyInfo;
 import com.talent.batch11.springbootapp.serviceimpl.AccountServiceimpl;
 import com.talent.batch11.springbootapp.serviceimpl.TransactionServiceimpl;
 import jakarta.servlet.http.HttpSession;
@@ -10,13 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import com.talent.batch11.springbootapp.request.LoginInfo;
-
+import com.talent.batch11.springbootapp.dto.request.LoginInfo;
 
 @Controller
 public class AccountController {
     @Autowired
     AccountServiceimpl accountService;
+
     @Autowired
     private TransactionServiceimpl transactionServiceimpl;
 

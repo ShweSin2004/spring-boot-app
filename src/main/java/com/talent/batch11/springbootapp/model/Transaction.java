@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 @Table(name = "transaction")
 public class Transaction extends AbstractEntity{
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "account_id")
     private Account account;
 
