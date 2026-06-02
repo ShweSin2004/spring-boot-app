@@ -28,4 +28,5 @@ public interface AccountService {
     public List<Account> getAllAccounts();
 
     public List<Transaction> getAllTransactionsByAccountId(long accountId);
+
 }

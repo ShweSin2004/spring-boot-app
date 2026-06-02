@@ -34,7 +34,7 @@ public class Account extends AbstractEntity{
 
     private double balance;
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL
-            , orphanRemoval = true)
+            , orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Transaction> transactions = new ArrayList<>();
 
 }

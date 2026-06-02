@@ -1,4 +1,5 @@
 package com.talent.batch11.springbootapp.model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.talent.batch11.springbootapp.model.enumDemo.TransactionType;
 
 import jakarta.persistence.*;
@@ -12,8 +13,10 @@ import java.time.format.DateTimeFormatter;
 @Table(name = "transaction")
 public class Transaction extends AbstractEntity{
 
-    @ManyToOne(fetch = FetchType.LAZY)
+
+    @ManyToOne()
     @JoinColumn(name = "account_id")
+    @JsonIgnore
     private Account account;
 
     @Id
