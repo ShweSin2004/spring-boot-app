@@ -214,5 +214,15 @@ public class AccountServiceimpl implements AccountService {
         return  account.getTransactions();
     }
 
+    String api = "zuTG5ioRPx75sOderkUMGuDnepg8WD4z6jKD4ClPktHUWDlT";
+
+    @Override
+    public boolean checkapi(String apiKey) {
+        if (apiKey.equals(api)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }

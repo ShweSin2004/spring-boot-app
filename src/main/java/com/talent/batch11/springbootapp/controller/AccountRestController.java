@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/account")
 public class AccountRestController {
 
-    String api = "zuTG5ioRPx75sOderkUMGuDnepg8WD4z6jKD4ClPktHUWDlT";
 
     @Autowired
     private AccountService accountService;
@@ -28,7 +27,7 @@ public class AccountRestController {
     @PostMapping("/login")
     public ResponseEntity loginAccount(@RequestHeader String apiKey, @RequestBody LoginInfo loginInfo, HttpSession session) {
 
-        if (checkapi(apiKey)) {
+        if (accountService.checkapi(apiKey)) {
             Account account = accountService.logIn(loginInfo);
             session.setAttribute("account", account);
             account.setTransactions(null);
@@ -49,7 +48,7 @@ public class AccountRestController {
 
     @GetMapping("/{id}")
     public ResponseEntity getAccountByAccountId(@RequestHeader String apiKey, @PathVariable long id){
-        if(checkapi(apiKey)) {
+        if(accountService.checkapi(apiKey)) {
             Account account = accountService.getAccountById(id);
             return ResponseEntity.ok(account);
         } else {
@@ -59,7 +58,7 @@ public class AccountRestController {
 
     @PostMapping("/register")
     public ResponseEntity register(@RequestHeader String apiKey, @RequestBody RegisterInfo registerInfo, HttpSession session){
-        if (checkapi(apiKey)) {
+        if (accountService.checkapi(apiKey)) {
             UserLogInResponse user = new UserLogInResponse();
             user.setAccount(accountService.register(registerInfo));
 
@@ -74,7 +73,7 @@ public class AccountRestController {
     @PostMapping("/withdraw")
     public ResponseEntity withdraw(@RequestHeader String apiKey,
                                    @RequestBody ServiceRequest serviceRequest, HttpSession session){
-        if (checkapi(apiKey)) {
+        if (accountService.checkapi(apiKey)) {
             ServiceResponse sr = new ServiceResponse();
 
             Account account = (Account) session.getAttribute("account");
@@ -93,7 +92,7 @@ public class AccountRestController {
     public ResponseEntity deposit(@RequestHeader String apiKey,
                                   @RequestBody ServiceRequest serviceRequest, HttpSession session){
 
-        if (checkapi(apiKey)) {
+        if (accountService.checkapi(apiKey)) {
             ServiceResponse sr = new ServiceResponse();
 
             Account account = (Account) session.getAttribute("account");
@@ -112,7 +111,7 @@ public class AccountRestController {
     public ResponseEntity topUp(@RequestHeader String apiKey,
                                 @RequestBody ServiceRequest serviceRequest, HttpSession session){
 
-        if (checkapi(apiKey)) {
+        if (accountService.checkapi(apiKey)) {
             ServiceResponse sr = new ServiceResponse();
 
             Account account = (Account) session.getAttribute("account");
@@ -131,7 +130,7 @@ public class AccountRestController {
     public ResponseEntity transfer(@RequestHeader String apiKey,
                                    @RequestBody TransferMoneyInfo transfer, HttpSession session){
 
-        if (checkapi(apiKey)) {
+        if (accountService.checkapi(apiKey)) {
             TransferResponse transferResponse = new TransferResponse();
 
             Account account = (Account) session.getAttribute("account");
@@ -149,7 +148,7 @@ public class AccountRestController {
     @PostMapping("/checkaccount")
     public ResponseEntity checkAccount(@RequestHeader String apiKey,
                                        HttpSession session) {
-        if (checkapi(apiKey)) {
+        if (accountService.checkapi(apiKey)) {
             Account account = (Account) session.getAttribute("account");
             return ResponseEntity.ok(account);
         } else {
@@ -160,34 +159,11 @@ public class AccountRestController {
     @PostMapping("/logout")
     public ResponseEntity logout(@RequestHeader String apiKey, HttpSession session) {
 
-        if(checkapi(apiKey)) {
+        if(accountService.checkapi(apiKey)) {
             session.invalidate();
             return ResponseEntity.ok("Logged out successfully.");
         } else {
             return ResponseEntity.ok("API key mismatched.");
-        }
-    }
-
-    @PostMapping("/checkhistory")
-    public ResponseEntity checkhistory(@RequestHeader String apiKey, HttpSession session) {
-
-        if (checkapi(apiKey)) {
-            Account account = (Account) session.getAttribute("account");
-            TransactionResponse tx = new TransactionResponse();
-
-            tx.setTransactionList(accountService.getAllTransactionsByAccountId(account.getId()));
-
-            return ResponseEntity.ok(tx);
-        } else {
-            return ResponseEntity.ok("API key mismatched.");
-        }
-    }
-
-    public boolean checkapi(String apiKey) {
-        if (apiKey.equals(api)) {
-            return true;
-        } else {
-            return false;
         }
     }
 }

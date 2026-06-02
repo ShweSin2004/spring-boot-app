@@ -29,4 +29,6 @@ public interface AccountService {
 
     public List<Transaction> getAllTransactionsByAccountId(long accountId);
 
+    public boolean checkapi(String apiKey);
+
 }
