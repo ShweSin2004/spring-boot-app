@@ -31,5 +31,4 @@ public class TransactionRestController {
             return ResponseEntity.ok("API key mismatched.");
         }
     }
-
 }

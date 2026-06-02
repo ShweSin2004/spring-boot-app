@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/account")
 public class AccountRestController {
 
-
     @Autowired
     private AccountService accountService;
 
@@ -166,4 +165,6 @@ public class AccountRestController {
             return ResponseEntity.ok("API key mismatched.");
         }
     }
+
+
 }
