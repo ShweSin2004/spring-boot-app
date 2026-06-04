@@ -9,22 +9,30 @@ import com.talent.batch11.springbootapp.dto.request.RegisterInfo;
 import com.talent.batch11.springbootapp.dto.request.TransferMoneyInfo;
 import com.talent.batch11.springbootapp.service.AccountService;
 import jakarta.transaction.Transactional;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.talent.batch11.springbootapp.dto.request.LoginInfo;
+import org.slf4j.Logger;
 
 import java.util.List;
 import java.util.Scanner;
 
 @Service
 public class AccountServiceimpl implements AccountService {
-    Scanner sc = new Scanner(System.in);
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     AccountRepository accountRepository;
 
     @Autowired
     TransactionRepository transactionRepository;
+
+    @Autowired
+    TokenServiceImpl tokenService;
 
     @Override
     @Transactional
@@ -75,10 +83,10 @@ public class AccountServiceimpl implements AccountService {
         System.out.println("Logged in successfully!");
         return findAccount;
     }
-
     @Override
     @Transactional
     public Account register(RegisterInfo registerInfo) {
+        logger.info("[[Reached register method inside Account Service Impl.]]");
         Account signUpAcc = new Account();
 
         signUpAcc.setName(registerInfo.getName());
@@ -89,14 +97,17 @@ public class AccountServiceimpl implements AccountService {
         signUpAcc.setRole(registerInfo.getRole());
 
         signUpAcc.setBalance(0);
-
         saveAccount(signUpAcc);
+
+        logger.info("[[Finished register method.]]");
+
         return signUpAcc;
     }
 
     @Override
     @Transactional
-    public void depositMoney(double amount, Account account) {
+    public ResponseEntity depositMoney(double amount, Account account) {
+        logger.info("[[Reached deposit method inside Account Service Impl.]]");
         double previous_amount = account.getBalance();
 
         if (amount <= 0) {
@@ -112,11 +123,13 @@ public class AccountServiceimpl implements AccountService {
         tx.setPrevious_amount(previous_amount);
         tx.setTransactionType(TransactionType.DEPOSIT_MONEY);
         transactionRepository.save(tx);
+        return ResponseEntity.ok("Deposit made successfully. Amount: " + amount);
     }
 
     @Override
     @Transactional
-    public void withdrawMoney(double amount, Account account) {
+    public ResponseEntity withdrawMoney(double amount, Account account) {
+        logger.info("[[Reached withdraw method inside Account Service Impl.]]");
         double previous_amount = account.getBalance();
 
         if (amount <= 0 || amount > account.getBalance()) {
@@ -132,29 +145,31 @@ public class AccountServiceimpl implements AccountService {
         tx.setPrevious_amount(previous_amount);
         tx.setTransactionType(TransactionType.WITHDRAW_MONEY);
         transactionRepository.save(tx);
+
+        return ResponseEntity.ok("Withdraw made successfully. Amount: " + amount);
     }
 
     @Override
     @Transactional
-    public void transferMoney(TransferMoneyInfo transferMoneyInfo, Account account) {
+    public ResponseEntity transferMoney(TransferMoneyInfo transferMoneyInfo, Account account) {
+        logger.info("[[Reached transfer method inside Account Service Impl.]]");
         double accountPreviousAmount = account.getBalance();
         double amount = transferMoneyInfo.getAmount();
 
         Account receiver = accountRepository.findAccountByPhoneNumber(transferMoneyInfo.getReceiver_phone());
 
         if (receiver == null) {
-            System.out.println("Recipient not found.");
-            return;
+            return ResponseEntity.ok("Recipient not found.");
         }
 
         double receiverPreviousAmount = receiver.getBalance();
 
         if (!account.getPassword().equals(transferMoneyInfo.getPassword())) {
-            throw new RuntimeException("Incorrect password.");
+            return ResponseEntity.ok("Incorrect password.");
         }
 
         if (amount <= 0 || amount > account.getBalance()) {
-            throw new RuntimeException("Invalid amount.");
+            return ResponseEntity.ok("Invalid amount");
         }
 
         account.setBalance(account.getBalance() - amount);
@@ -174,11 +189,14 @@ public class AccountServiceimpl implements AccountService {
         tr.setPrevious_amount(receiverPreviousAmount);
         tr.setTransactionType(TransactionType.RECEIVE_MONEY);
         transactionRepository.save(tr);
+
+        return ResponseEntity.ok("Transferred successfully. \n" + account + receiver);
     }
 
     @Override
     @Transactional
-    public void topUp(double amount, Account account) {
+    public ResponseEntity topUp(double amount, Account account) {
+        logger.info("[[Reached top up method inside Account Service Impl.]]");
         double previous_amount= account.getBalance();
 
         if (amount <= 0 || amount > account.getBalance()) {
@@ -194,6 +212,8 @@ public class AccountServiceimpl implements AccountService {
         tx.setPrevious_amount(previous_amount);
         tx.setTransactionType(TransactionType.TOP_UP);
         transactionRepository.save(tx);
+
+        return ResponseEntity.ok("Top up made successfully. Amount: " + amount);
     }
 
     @Override
@@ -214,15 +234,24 @@ public class AccountServiceimpl implements AccountService {
         return  account.getTransactions();
     }
 
-    String api = "zuTG5ioRPx75sOderkUMGuDnepg8WD4z6jKD4ClPktHUWDlT";
-
     @Override
-    public boolean checkapi(String apiKey) {
-        if (apiKey.equals(api)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    public ResponseEntity handleLoginRequest(LoginInfo loginInfo) {
+        logger.info("[[Reached Login request method inside Account Service Impl.]]");
 
+        Account account = accountRepository.findAccountByEmail(loginInfo.getEmail());
+        if (account == null || !account.getPassword().equals(loginInfo.getPassword())) {
+            throw new RuntimeException("Invalid email or password");
+        }
+
+        String accessToken = tokenService.generateAccessToken(account);
+        String refreshToken = tokenService.generateRefreshToken(account);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("accessToken",  accessToken);
+        headers.add("refreshToken",  refreshToken);
+
+        logger.info("[[Finished Login request method.]]");
+
+        return new ResponseEntity<>(account, headers, HttpStatus.OK );
+    }
 }

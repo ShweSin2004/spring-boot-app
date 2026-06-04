@@ -19,16 +19,6 @@ public class TransactionRestController {
 
     @PostMapping("/checkhistory")
     public ResponseEntity checkhistory(@RequestHeader String apiKey, HttpSession session) {
-
-        if (accountService.checkapi(apiKey)) {
-            Account account = (Account) session.getAttribute("account");
-            TransactionResponse tx = new TransactionResponse();
-
-            tx.setTransactionList(accountService.getAllTransactionsByAccountId(account.getId()));
-
-            return ResponseEntity.ok(tx);
-        } else {
-            return ResponseEntity.ok("API key mismatched.");
-        }
+        return ResponseEntity.ok("Unfinished");
     }
 }

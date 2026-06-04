@@ -7,6 +7,7 @@ import com.talent.batch11.springbootapp.model.Transaction;
 import com.talent.batch11.springbootapp.dto.request.RegisterInfo;
 import com.talent.batch11.springbootapp.dto.request.LoginInfo;
 import com.talent.batch11.springbootapp.dto.request.TransferMoneyInfo;
+import org.springframework.http.ResponseEntity;
 
 public interface AccountService {
     public void saveAccount(Account account);
@@ -18,10 +19,10 @@ public interface AccountService {
     public Account logIn(LoginInfo loginInfo);
     public Account register(RegisterInfo registerInfo);
 
-    public void depositMoney(double amount, Account account);
-    public void withdrawMoney(double amount, Account account);
-    public void transferMoney(TransferMoneyInfo transferMoneyInfo, Account account);
-    public void topUp(double amount, Account account);
+    public ResponseEntity depositMoney(double amount, Account account);
+    public ResponseEntity withdrawMoney(double amount, Account account);
+    public ResponseEntity transferMoney(TransferMoneyInfo transferMoneyInfo, Account account);
+    public ResponseEntity topUp(double amount, Account account);
 
     public Account getAccountById(long id);
 
@@ -29,6 +30,6 @@ public interface AccountService {
 
     public List<Transaction> getAllTransactionsByAccountId(long accountId);
 
-    public boolean checkapi(String apiKey);
+    public ResponseEntity handleLoginRequest(LoginInfo loginInfo);
 
 }

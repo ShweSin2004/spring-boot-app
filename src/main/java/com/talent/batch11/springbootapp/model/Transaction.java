@@ -4,16 +4,17 @@ import com.talent.batch11.springbootapp.model.enumDemo.TransactionType;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
 @Table(name = "transaction")
 public class Transaction extends AbstractEntity{
 
 
+    @ToString.Exclude
     @ManyToOne()
     @JoinColumn(name = "account_id")
     @JsonIgnore
