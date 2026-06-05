@@ -107,9 +107,9 @@ public class TokenServiceImpl implements TokenService {
             );
 
         } catch (ExpiredJwtException e) {
-            throw new JwtException("Access token is expired.", e);
+            throw new JwtException("Access token is expired.");
         } catch (JwtException e) {
-            throw new JwtException("Access token is invalid.", e);
+            throw new JwtException("Access token is invalid.");
         }
     }
 

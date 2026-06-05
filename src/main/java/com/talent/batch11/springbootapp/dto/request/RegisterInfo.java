@@ -4,12 +4,11 @@ import lombok.Data;
 
 @Data
 public class RegisterInfo {
-    private String name;
-    private String role;
-    private String email;
-    private String password;
-    private String confirmPassword;
-    private String phoneNumber;
-    private String address;
-
+    String name;
+    String role;
+    String email;
+    String password;
+    String confirmPassword;
+    String phoneNumber;
+    String address;
 }
