@@ -35,7 +35,8 @@ public interface AccountService {
 
     public List<Account> getAllAccounts();
 
-    public List<Transaction> getAllTransactionsByAccountId(long accountId);
+
+
 
     public ResponseEntity<CommonResponse> handleLoginRequest(LoginInfoApi loginInfoApi);
     public ResponseEntity<CommonResponse> depositMoneyApi(String authHeader, ServiceRequestApi serviceRequestApi);
@@ -43,4 +44,5 @@ public interface AccountService {
     public ResponseEntity<CommonResponse> withdrawMoneyApi(String authHeader, ServiceRequestApi serviceRequestApi);
     public ResponseEntity<CommonResponse> transferMoneyApi(String authHeader, TransferMoneyInfoApi transferMoneyInfoApi);
     public ResponseEntity<CommonResponse> topUpApi(String authHeader, ServiceRequestApi serviceRequestApi);
+
 }

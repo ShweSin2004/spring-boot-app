@@ -8,4 +8,5 @@ public interface TokenService {
     public String generateRefreshToken(Account account);
     public Authentication parseToken(String token);
     public Account getAccountByToken(String token);
+
 }

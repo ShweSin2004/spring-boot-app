@@ -1,23 +1,23 @@
-2026-06-05 10:30:34 - Starting SpringBootAppApplication using Java 17.0.19 with PID 13316 (C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app\build\classes\java\main started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
-2026-06-05 10:30:34 - No active profile set, falling back to 1 default profile: "default"
-2026-06-05 10:30:35 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-05 10:30:35 - Finished Spring Data repository scanning in 56 ms. Found 2 JPA repository interfaces.
-2026-06-05 10:30:35 - Tomcat initialized with port 9999 (http)
-2026-06-05 10:30:35 - Initializing ProtocolHandler ["http-nio-9999"]
-2026-06-05 10:30:35 - Starting service [Tomcat]
-2026-06-05 10:30:35 - Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-05 10:30:35 - Root WebApplicationContext: initialization completed in 1618 ms
-2026-06-05 10:30:36 - HikariPool-1 - Starting...
-2026-06-05 10:30:36 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a10c47e
-2026-06-05 10:30:36 - HikariPool-1 - Start completed.
-2026-06-05 10:30:36 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
-2026-06-05 10:30:36 - Successfully validated 2 migrations (execution time 00:00.034s)
-2026-06-05 10:30:36 - Current version of schema `atm_db`: 1
-2026-06-05 10:30:36 - Schema `atm_db` is up to date. No migration necessary.
-2026-06-05 10:30:37 - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-05 10:30:37 - HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-05 10:30:37 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-05 10:30:37 - HHH10001005: Database info:
+2026-06-08 10:31:01 - Starting SpringBootAppApplication using Java 17.0.19 with PID 4224 (C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app\build\classes\java\main started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
+2026-06-08 10:31:01 - No active profile set, falling back to 1 default profile: "default"
+2026-06-08 10:31:02 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08 10:31:02 - Finished Spring Data repository scanning in 57 ms. Found 2 JPA repository interfaces.
+2026-06-08 10:31:03 - Tomcat initialized with port 9999 (http)
+2026-06-08 10:31:03 - Initializing ProtocolHandler ["http-nio-9999"]
+2026-06-08 10:31:03 - Starting service [Tomcat]
+2026-06-08 10:31:03 - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08 10:31:03 - Root WebApplicationContext: initialization completed in 1647 ms
+2026-06-08 10:31:03 - HikariPool-1 - Starting...
+2026-06-08 10:31:04 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d28cdcd
+2026-06-08 10:31:04 - HikariPool-1 - Start completed.
+2026-06-08 10:31:04 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
+2026-06-08 10:31:04 - Successfully validated 2 migrations (execution time 00:00.049s)
+2026-06-08 10:31:04 - Current version of schema `atm_db`: 1
+2026-06-08 10:31:04 - Schema `atm_db` is up to date. No migration necessary.
+2026-06-08 10:31:04 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08 10:31:04 - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08 10:31:05 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08 10:31:05 - HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/atm_db]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
@@ -29,40 +29,52 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-06-05 10:30:39 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-05 10:30:39 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-05 10:30:39 - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-05 10:30:39 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-05 10:30:39 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-06-05 10:30:39 - Adding welcome page template: index
-2026-06-05 10:30:40 - Starting ProtocolHandler ["http-nio-9999"]
-2026-06-05 10:30:40 - Tomcat started on port 9999 (http) with context path '/'
-2026-06-05 10:30:40 - Started SpringBootAppApplication in 6.274 seconds (process running for 7.768)
-2026-06-05 10:31:31 - Commencing graceful shutdown. Waiting for active requests to complete
-2026-06-05 10:31:32 - Graceful shutdown complete
-2026-06-05 10:31:32 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-06-05 10:31:32 - HikariPool-1 - Shutdown initiated...
-2026-06-05 10:31:32 - HikariPool-1 - Shutdown completed.
-2026-06-05 10:31:54 - Starting SpringBootAppApplication using Java 17.0.19 with PID 10292 (C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app\build\classes\java\main started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
-2026-06-05 10:31:54 - No active profile set, falling back to 1 default profile: "default"
-2026-06-05 10:31:55 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-05 10:31:55 - Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
-2026-06-05 10:31:55 - Tomcat initialized with port 9999 (http)
-2026-06-05 10:31:55 - Initializing ProtocolHandler ["http-nio-9999"]
-2026-06-05 10:31:55 - Starting service [Tomcat]
-2026-06-05 10:31:55 - Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-05 10:31:56 - Root WebApplicationContext: initialization completed in 1090 ms
-2026-06-05 10:31:56 - HikariPool-1 - Starting...
-2026-06-05 10:31:56 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1231a1be
-2026-06-05 10:31:56 - HikariPool-1 - Start completed.
-2026-06-05 10:31:56 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
-2026-06-05 10:31:56 - Successfully validated 2 migrations (execution time 00:00.026s)
-2026-06-05 10:31:56 - Current version of schema `atm_db`: 1
-2026-06-05 10:31:56 - Schema `atm_db` is up to date. No migration necessary.
-2026-06-05 10:31:56 - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-05 10:31:56 - HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-05 10:31:57 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-05 10:31:57 - HHH10001005: Database info:
+2026-06-08 10:31:06 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08 10:31:06 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 10:31:06 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08 10:31:06 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08 10:31:07 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-08 10:31:07 - Adding welcome page template: index
+2026-06-08 10:31:07 - Starting ProtocolHandler ["http-nio-9999"]
+2026-06-08 10:31:07 - Tomcat started on port 9999 (http) with context path '/'
+2026-06-08 10:31:07 - Started SpringBootAppApplication in 6.162 seconds (process running for 13.218)
+2026-06-08 10:31:12 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-08 10:31:12 - Initializing Servlet 'dispatcherServlet'
+2026-06-08 10:31:12 - Completed initialization in 1 ms
+2026-06-08 10:31:12 - [[Reached login controller]]
+2026-06-08 10:31:12 - [[Reached Login request method inside Account Service Impl.]]
+2026-06-08 10:31:12 - [[Finished Login request method.]]
+2026-06-08 10:31:22 - [[Reached 'parse token' method.]]
+2026-06-08 10:31:22 - [[Reached topup controller]]
+2026-06-08 10:31:22 - [[Reached top up method inside Account Service Impl.]]
+2026-06-08 10:31:22 - Reached get account by token method.
+2026-06-08 10:31:22 - Unhandled exception at com.talent.batch11.springbootapp.serviceimpl.AccountServiceimpl.topUpApi (Line:415): Invalid amount.
+2026-06-08 10:44:44 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-08 10:44:44 - Graceful shutdown complete
+2026-06-08 10:44:44 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 10:44:44 - HikariPool-1 - Shutdown initiated...
+2026-06-08 10:44:44 - HikariPool-1 - Shutdown completed.
+2026-06-08 13:53:13 - Starting SpringBootAppApplication using Java 17.0.19 with PID 8392 (C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app\build\classes\java\main started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
+2026-06-08 13:53:13 - No active profile set, falling back to 1 default profile: "default"
+2026-06-08 13:53:14 - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-08 13:53:14 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08 13:53:14 - Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
+2026-06-08 13:53:15 - Tomcat initialized with port 9999 (http)
+2026-06-08 13:53:15 - Initializing ProtocolHandler ["http-nio-9999"]
+2026-06-08 13:53:15 - Starting service [Tomcat]
+2026-06-08 13:53:15 - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08 13:53:15 - Root WebApplicationContext: initialization completed in 1592 ms
+2026-06-08 13:53:15 - HikariPool-1 - Starting...
+2026-06-08 13:53:16 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5ab5924c
+2026-06-08 13:53:16 - HikariPool-1 - Start completed.
+2026-06-08 13:53:16 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
+2026-06-08 13:53:16 - Successfully validated 2 migrations (execution time 00:00.055s)
+2026-06-08 13:53:16 - Current version of schema `atm_db`: 1
+2026-06-08 13:53:16 - Schema `atm_db` is up to date. No migration necessary.
+2026-06-08 13:53:16 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08 13:53:16 - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08 13:53:17 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08 13:53:17 - HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/atm_db]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
@@ -74,81 +86,45 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-06-05 10:31:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-05 10:31:58 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-05 10:31:58 - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-05 10:31:58 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-05 10:31:58 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-06-05 10:31:58 - Adding welcome page template: index
-2026-06-05 10:31:59 - Starting ProtocolHandler ["http-nio-9999"]
-2026-06-05 10:31:59 - Tomcat started on port 9999 (http) with context path '/'
-2026-06-05 10:31:59 - Started SpringBootAppApplication in 4.792 seconds (process running for 5.483)
-2026-06-05 10:33:19 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-05 10:33:19 - Initializing Servlet 'dispatcherServlet'
-2026-06-05 10:33:19 - Completed initialization in 1 ms
-2026-06-05 10:33:19 - [[Reached login controller]]
-2026-06-05 10:33:19 - [[Reached Login request method inside Account Service Impl.]]
-2026-06-05 10:33:20 - [[Finished Login request method.]]
-2026-06-05 10:33:31 - [[Reached login controller]]
-2026-06-05 10:33:31 - [[Reached Login request method inside Account Service Impl.]]
-2026-06-05 10:33:31 - [[Finished Login request method.]]
-2026-06-05 10:33:42 - [[Reached login controller]]
-2026-06-05 10:33:42 - [[Reached Login request method inside Account Service Impl.]]
-2026-06-05 10:33:42 - [[Finished Login request method.]]
-2026-06-05 10:33:51 - [[Reached 'parse token' method.]]
-2026-06-05 10:33:51 - [[Reached transfer controller]]
-2026-06-05 10:33:51 - Reached ransfer controller
-2026-06-05 10:33:51 - Reached get account by token method.
-2026-06-05 10:33:51 - [[Reached transfer method inside Account Service Impl.]]
-2026-06-05 10:33:55 - [[Reached 'parse token' method.]]
-2026-06-05 10:33:55 - [[Reached transfer controller]]
-2026-06-05 10:33:55 - Reached ransfer controller
-2026-06-05 10:33:55 - Reached get account by token method.
-2026-06-05 10:33:55 - [[Reached transfer method inside Account Service Impl.]]
-2026-06-05 10:36:33 - [[Reached 'parse token' method.]]
-2026-06-05 10:36:33 - [[Reached transfer controller]]
-2026-06-05 10:36:33 - Reached ransfer controller
-2026-06-05 10:36:33 - Reached get account by token method.
-2026-06-05 10:36:33 - [[Reached transfer method inside Account Service Impl.]]
-2026-06-05 10:37:37 - [[Reached 'parse token' method.]]
-2026-06-05 10:37:37 - [[Reached topup controller]]
-2026-06-05 10:37:37 - Reached get account by token method.
-2026-06-05 10:37:37 - [[Reached top up method inside Account Service Impl.]]
-2026-06-05 10:37:41 - [[Reached 'parse token' method.]]
-2026-06-05 10:37:41 - [[Reached withdraw controller]]
-2026-06-05 10:37:41 - Reached get account by token method.
-2026-06-05 10:37:41 - [[Reached withdraw method inside Account Service Impl.]]
-2026-06-05 10:37:48 - [[Reached 'parse token' method.]]
-2026-06-05 10:37:48 - [[Reached deposit controller]]
-2026-06-05 10:37:48 - Reached get account by token method.
-2026-06-05 10:37:48 - [[Reached deposit method inside Account Service Impl.]]
-2026-06-05 10:38:36 - [[Reached 'parse token' method.]]
-2026-06-05 10:38:52 - [[Reached 'parse token' method.]]
-2026-06-05 10:40:35 - Commencing graceful shutdown. Waiting for active requests to complete
-2026-06-05 10:40:35 - Graceful shutdown complete
-2026-06-05 10:40:35 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-06-05 10:40:35 - HikariPool-1 - Shutdown initiated...
-2026-06-05 10:40:35 - HikariPool-1 - Shutdown completed.
-2026-06-05 20:14:12 - Starting SpringBootAppApplication using Java 17.0.19 with PID 16060 (C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app\build\classes\java\main started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
-2026-06-05 20:14:12 - No active profile set, falling back to 1 default profile: "default"
-2026-06-05 20:14:14 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-05 20:14:14 - Finished Spring Data repository scanning in 77 ms. Found 2 JPA repository interfaces.
-2026-06-05 20:14:15 - Tomcat initialized with port 9999 (http)
-2026-06-05 20:14:15 - Initializing ProtocolHandler ["http-nio-9999"]
-2026-06-05 20:14:15 - Starting service [Tomcat]
-2026-06-05 20:14:15 - Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-05 20:14:15 - Root WebApplicationContext: initialization completed in 2184 ms
-2026-06-05 20:14:15 - HikariPool-1 - Starting...
-2026-06-05 20:14:16 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@31f31b20
-2026-06-05 20:14:16 - HikariPool-1 - Start completed.
-2026-06-05 20:14:16 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
-2026-06-05 20:14:16 - Successfully validated 2 migrations (execution time 00:00.062s)
-2026-06-05 20:14:16 - Current version of schema `atm_db`: 1
-2026-06-05 20:14:16 - Schema `atm_db` is up to date. No migration necessary.
-2026-06-05 20:14:16 - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-05 20:14:16 - HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-05 20:14:17 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-05 20:14:17 - HHH10001005: Database info:
+2026-06-08 13:53:18 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08 13:53:18 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 13:53:18 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08 13:53:18 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08 13:53:18 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-08 13:53:19 - Adding welcome page template: index
+2026-06-08 13:53:19 - Starting ProtocolHandler ["http-nio-9999"]
+2026-06-08 13:53:19 - Tomcat started on port 9999 (http) with context path '/'
+2026-06-08 13:53:19 - Started SpringBootAppApplication in 6.105 seconds (process running for 7.812)
+2026-06-08 13:53:34 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-08 13:53:34 - Initializing Servlet 'dispatcherServlet'
+2026-06-08 13:53:34 - Completed initialization in 1 ms
+2026-06-08 13:53:34 - Validation failed at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument (Line:165): password: must be less than or equal to 15
+2026-06-08 13:55:32 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-08 13:55:32 - Graceful shutdown complete
+2026-06-08 13:55:32 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 13:55:32 - HikariPool-1 - Shutdown initiated...
+2026-06-08 13:55:32 - HikariPool-1 - Shutdown completed.
+2026-06-08 13:55:38 - Starting SpringBootAppApplication using Java 17.0.19 with PID 13024 (C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app\build\classes\java\main started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
+2026-06-08 13:55:38 - No active profile set, falling back to 1 default profile: "default"
+2026-06-08 13:55:38 - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-08 13:55:38 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08 13:55:38 - Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
+2026-06-08 13:55:39 - Tomcat initialized with port 9999 (http)
+2026-06-08 13:55:39 - Initializing ProtocolHandler ["http-nio-9999"]
+2026-06-08 13:55:39 - Starting service [Tomcat]
+2026-06-08 13:55:39 - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08 13:55:39 - Root WebApplicationContext: initialization completed in 1246 ms
+2026-06-08 13:55:39 - HikariPool-1 - Starting...
+2026-06-08 13:55:39 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@d66502
+2026-06-08 13:55:39 - HikariPool-1 - Start completed.
+2026-06-08 13:55:40 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
+2026-06-08 13:55:40 - Successfully validated 2 migrations (execution time 00:00.030s)
+2026-06-08 13:55:40 - Current version of schema `atm_db`: 1
+2026-06-08 13:55:40 - Schema `atm_db` is up to date. No migration necessary.
+2026-06-08 13:55:40 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08 13:55:40 - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08 13:55:40 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08 13:55:40 - HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/atm_db]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
@@ -160,52 +136,50 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-06-05 20:14:19 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-05 20:14:19 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-05 20:14:19 - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-05 20:14:19 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-05 20:14:20 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-06-05 20:14:20 - Adding welcome page template: index
-2026-06-05 20:14:20 - Starting ProtocolHandler ["http-nio-9999"]
-2026-06-05 20:14:20 - Tomcat started on port 9999 (http) with context path '/'
-2026-06-05 20:14:20 - Started SpringBootAppApplication in 8.493 seconds (process running for 10.483)
-2026-06-05 20:14:25 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-05 20:14:25 - Initializing Servlet 'dispatcherServlet'
-2026-06-05 20:14:25 - Completed initialization in 1 ms
-2026-06-05 20:14:25 - [[Reached login controller]]
-2026-06-05 20:14:25 - [[Reached Login request method inside Account Service Impl.]]
-2026-06-05 20:14:26 - [[Finished Login request method.]]
-2026-06-05 20:14:34 - [[Reached login controller]]
-2026-06-05 20:14:34 - [[Reached Login request method inside Account Service Impl.]]
-2026-06-05 20:14:34 - Unhandled exception at com.talent.batch11.springbootapp.serviceimpl.AccountServiceimpl.handleLoginRequest (Line:255): Invalid email or password
-2026-06-05 20:14:43 - [[Reached login controller]]
-2026-06-05 20:14:43 - [[Reached Login request method inside Account Service Impl.]]
-2026-06-05 20:14:43 - [[Finished Login request method.]]
-2026-06-05 20:24:52 - Commencing graceful shutdown. Waiting for active requests to complete
-2026-06-05 20:24:52 - Graceful shutdown complete
-2026-06-05 20:24:52 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-06-05 20:24:52 - HikariPool-1 - Shutdown initiated...
-2026-06-05 20:24:52 - HikariPool-1 - Shutdown completed.
-2026-06-05 20:25:15 - Starting SpringBootAppApplication using Java 17.0.19 with PID 15492 (C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app\build\classes\java\main started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
-2026-06-05 20:25:15 - No active profile set, falling back to 1 default profile: "default"
-2026-06-05 20:25:15 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-05 20:25:15 - Finished Spring Data repository scanning in 57 ms. Found 2 JPA repository interfaces.
-2026-06-05 20:25:16 - Tomcat initialized with port 9999 (http)
-2026-06-05 20:25:16 - Initializing ProtocolHandler ["http-nio-9999"]
-2026-06-05 20:25:16 - Starting service [Tomcat]
-2026-06-05 20:25:16 - Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-05 20:25:16 - Root WebApplicationContext: initialization completed in 1535 ms
-2026-06-05 20:25:17 - HikariPool-1 - Starting...
-2026-06-05 20:25:17 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@31f31b20
-2026-06-05 20:25:17 - HikariPool-1 - Start completed.
-2026-06-05 20:25:17 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
-2026-06-05 20:25:17 - Successfully validated 2 migrations (execution time 00:00.032s)
-2026-06-05 20:25:17 - Current version of schema `atm_db`: 1
-2026-06-05 20:25:17 - Schema `atm_db` is up to date. No migration necessary.
-2026-06-05 20:25:17 - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-05 20:25:17 - HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-05 20:25:18 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-05 20:25:18 - HHH10001005: Database info:
+2026-06-08 13:55:41 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08 13:55:41 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 13:55:42 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08 13:55:42 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08 13:55:42 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-08 13:55:42 - Adding welcome page template: index
+2026-06-08 13:55:42 - Starting ProtocolHandler ["http-nio-9999"]
+2026-06-08 13:55:42 - Tomcat started on port 9999 (http) with context path '/'
+2026-06-08 13:55:42 - Started SpringBootAppApplication in 5.325 seconds (process running for 6.029)
+2026-06-08 13:55:53 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-08 13:55:53 - Initializing Servlet 'dispatcherServlet'
+2026-06-08 13:55:53 - Completed initialization in 1 ms
+2026-06-08 13:55:53 - [[Reached login controller]]
+2026-06-08 13:55:53 - [[Reached Login request method inside Account Service Impl.]]
+2026-06-08 13:55:53 - [[Login method completed.]]
+2026-06-08 13:56:49 - [[Reached login controller]]
+2026-06-08 13:56:49 - [[Reached Login request method inside Account Service Impl.]]
+2026-06-08 13:56:49 - [[Login method completed.]]
+2026-06-08 13:58:19 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-08 13:58:19 - Graceful shutdown complete
+2026-06-08 13:58:19 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 13:58:19 - HikariPool-1 - Shutdown initiated...
+2026-06-08 13:58:19 - HikariPool-1 - Shutdown completed.
+2026-06-08 13:58:24 - Starting SpringBootAppApplication using Java 17.0.19 with PID 14208 (C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app\build\classes\java\main started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
+2026-06-08 13:58:24 - No active profile set, falling back to 1 default profile: "default"
+2026-06-08 13:58:24 - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-08 13:58:25 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08 13:58:25 - Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
+2026-06-08 13:58:25 - Tomcat initialized with port 9999 (http)
+2026-06-08 13:58:25 - Initializing ProtocolHandler ["http-nio-9999"]
+2026-06-08 13:58:25 - Starting service [Tomcat]
+2026-06-08 13:58:25 - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08 13:58:25 - Root WebApplicationContext: initialization completed in 1225 ms
+2026-06-08 13:58:26 - HikariPool-1 - Starting...
+2026-06-08 13:58:26 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@d66502
+2026-06-08 13:58:26 - HikariPool-1 - Start completed.
+2026-06-08 13:58:26 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
+2026-06-08 13:58:26 - Successfully validated 2 migrations (execution time 00:00.035s)
+2026-06-08 13:58:26 - Current version of schema `atm_db`: 1
+2026-06-08 13:58:26 - Schema `atm_db` is up to date. No migration necessary.
+2026-06-08 13:58:26 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08 13:58:26 - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08 13:58:27 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08 13:58:27 - HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/atm_db]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
@@ -217,49 +191,60 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-06-05 20:25:19 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-05 20:25:19 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-05 20:25:19 - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-05 20:25:20 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-05 20:25:20 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-06-05 20:25:20 - Adding welcome page template: index
-2026-06-05 20:25:20 - Starting ProtocolHandler ["http-nio-9999"]
-2026-06-05 20:25:20 - Tomcat started on port 9999 (http) with context path '/'
-2026-06-05 20:25:20 - Started SpringBootAppApplication in 6.143 seconds (process running for 6.837)
-2026-06-05 20:25:25 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-05 20:25:25 - Initializing Servlet 'dispatcherServlet'
-2026-06-05 20:25:25 - Completed initialization in 1 ms
-2026-06-05 20:25:25 - [[Reached login controller]]
-2026-06-05 20:25:25 - [[Reached Login request method inside Account Service Impl.]]
-2026-06-05 20:25:26 - [[Finished Login request method.]]
-2026-06-05 20:25:37 - [[Reached login controller]]
-2026-06-05 20:25:37 - [[Reached Login request method inside Account Service Impl.]]
-2026-06-05 20:25:37 - [[Finished Login request method.]]
-2026-06-05 20:25:41 - Commencing graceful shutdown. Waiting for active requests to complete
-2026-06-05 20:25:41 - Graceful shutdown complete
-2026-06-05 20:25:41 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-06-05 20:25:41 - HikariPool-1 - Shutdown initiated...
-2026-06-05 20:25:41 - HikariPool-1 - Shutdown completed.
-2026-06-05 20:35:21 - Starting SpringBootAppApplication using Java 17.0.19 with PID 16624 (C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app\build\classes\java\main started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
-2026-06-05 20:35:21 - No active profile set, falling back to 1 default profile: "default"
-2026-06-05 20:35:22 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-05 20:35:22 - Finished Spring Data repository scanning in 60 ms. Found 2 JPA repository interfaces.
-2026-06-05 20:35:23 - Tomcat initialized with port 9999 (http)
-2026-06-05 20:35:23 - Initializing ProtocolHandler ["http-nio-9999"]
-2026-06-05 20:35:23 - Starting service [Tomcat]
-2026-06-05 20:35:23 - Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-05 20:35:23 - Root WebApplicationContext: initialization completed in 1454 ms
-2026-06-05 20:35:23 - HikariPool-1 - Starting...
-2026-06-05 20:35:24 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@31f31b20
-2026-06-05 20:35:24 - HikariPool-1 - Start completed.
-2026-06-05 20:35:24 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
-2026-06-05 20:35:24 - Successfully validated 2 migrations (execution time 00:00.046s)
-2026-06-05 20:35:24 - Current version of schema `atm_db`: 1
-2026-06-05 20:35:24 - Schema `atm_db` is up to date. No migration necessary.
-2026-06-05 20:35:24 - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-05 20:35:24 - HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-05 20:35:24 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-05 20:35:25 - HHH10001005: Database info:
+2026-06-08 13:58:28 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08 13:58:28 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 13:58:28 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08 13:58:29 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08 13:58:29 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-08 13:58:29 - Adding welcome page template: index
+2026-06-08 13:58:29 - Starting ProtocolHandler ["http-nio-9999"]
+2026-06-08 13:58:29 - Tomcat started on port 9999 (http) with context path '/'
+2026-06-08 13:58:29 - Started SpringBootAppApplication in 5.714 seconds (process running for 6.421)
+2026-06-08 13:58:33 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-08 13:58:33 - Initializing Servlet 'dispatcherServlet'
+2026-06-08 13:58:33 - Completed initialization in 2 ms
+2026-06-08 13:58:33 - [[Reached login controller]]
+2026-06-08 13:58:33 - [[Reached Login request method inside Account Service Impl.]]
+2026-06-08 13:58:34 - [[Login method completed.]]
+2026-06-08 13:58:45 - [[Reached login controller]]
+2026-06-08 13:58:45 - [[Reached Login request method inside Account Service Impl.]]
+2026-06-08 13:58:45 - [[Login method completed.]]
+2026-06-08 13:59:01 - [[Reached 'parse token' method.]]
+2026-06-08 13:59:01 - [[Reached transfer controller]]
+2026-06-08 13:59:01 - [[Reached transfer method inside Account Service Impl.]]
+2026-06-08 13:59:01 - Reached get account by token method.
+2026-06-08 13:59:01 - [[Transfer method completed.]]
+2026-06-08 14:00:39 - [[Reached 'parse token' method.]]
+2026-06-08 14:00:39 - [[Reached transaction controller.]]
+2026-06-08 14:00:39 - [[Reached get trasactions method inside Account Service Impl.]]
+2026-06-08 14:00:39 - Reached get account by token method.
+2026-06-08 14:00:39 - [[Get transaction method completed.]]
+2026-06-08 14:05:48 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-08 14:05:48 - Graceful shutdown complete
+2026-06-08 14:05:48 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:05:48 - HikariPool-1 - Shutdown initiated...
+2026-06-08 14:05:48 - HikariPool-1 - Shutdown completed.
+2026-06-08 14:05:53 - Starting SpringBootAppApplication using Java 17.0.19 with PID 13996 (C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app\build\classes\java\main started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
+2026-06-08 14:05:53 - No active profile set, falling back to 1 default profile: "default"
+2026-06-08 14:05:53 - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-08 14:05:54 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08 14:05:54 - Finished Spring Data repository scanning in 45 ms. Found 2 JPA repository interfaces.
+2026-06-08 14:05:54 - Tomcat initialized with port 9999 (http)
+2026-06-08 14:05:54 - Initializing ProtocolHandler ["http-nio-9999"]
+2026-06-08 14:05:54 - Starting service [Tomcat]
+2026-06-08 14:05:54 - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08 14:05:54 - Root WebApplicationContext: initialization completed in 1274 ms
+2026-06-08 14:05:55 - HikariPool-1 - Starting...
+2026-06-08 14:05:55 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@78545d40
+2026-06-08 14:05:55 - HikariPool-1 - Start completed.
+2026-06-08 14:05:55 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
+2026-06-08 14:05:55 - Successfully validated 2 migrations (execution time 00:00.028s)
+2026-06-08 14:05:55 - Current version of schema `atm_db`: 1
+2026-06-08 14:05:55 - Schema `atm_db` is up to date. No migration necessary.
+2026-06-08 14:05:55 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08 14:05:55 - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08 14:05:56 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08 14:05:56 - HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/atm_db]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
@@ -271,46 +256,65 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-06-05 20:35:26 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-05 20:35:26 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-05 20:35:26 - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-05 20:35:26 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-05 20:35:26 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-06-05 20:35:26 - Adding welcome page template: index
-2026-06-05 20:35:27 - Starting ProtocolHandler ["http-nio-9999"]
-2026-06-05 20:35:27 - Tomcat started on port 9999 (http) with context path '/'
-2026-06-05 20:35:27 - Started SpringBootAppApplication in 5.875 seconds (process running for 6.493)
-2026-06-05 20:35:33 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-05 20:35:33 - Initializing Servlet 'dispatcherServlet'
-2026-06-05 20:35:33 - Completed initialization in 1 ms
-2026-06-05 20:35:33 - [[Reached login controller]]
-2026-06-05 20:35:33 - [[Reached Login request method inside Account Service Impl.]]
-2026-06-05 20:35:34 - [[Finished Login request method.]]
-2026-06-05 20:35:59 - Commencing graceful shutdown. Waiting for active requests to complete
-2026-06-05 20:35:59 - Graceful shutdown complete
-2026-06-05 20:35:59 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-06-05 20:35:59 - HikariPool-1 - Shutdown initiated...
-2026-06-05 20:35:59 - HikariPool-1 - Shutdown completed.
-2026-06-05 20:36:04 - Starting SpringBootAppApplication using Java 17.0.19 with PID 10376 (C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app\build\classes\java\main started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
-2026-06-05 20:36:04 - No active profile set, falling back to 1 default profile: "default"
-2026-06-05 20:36:04 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-05 20:36:04 - Finished Spring Data repository scanning in 55 ms. Found 2 JPA repository interfaces.
-2026-06-05 20:36:05 - Tomcat initialized with port 9999 (http)
-2026-06-05 20:36:05 - Initializing ProtocolHandler ["http-nio-9999"]
-2026-06-05 20:36:05 - Starting service [Tomcat]
-2026-06-05 20:36:05 - Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-05 20:36:05 - Root WebApplicationContext: initialization completed in 1459 ms
-2026-06-05 20:36:05 - HikariPool-1 - Starting...
-2026-06-05 20:36:06 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@16c5b50a
-2026-06-05 20:36:06 - HikariPool-1 - Start completed.
-2026-06-05 20:36:06 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
-2026-06-05 20:36:06 - Successfully validated 2 migrations (execution time 00:00.043s)
-2026-06-05 20:36:06 - Current version of schema `atm_db`: 1
-2026-06-05 20:36:06 - Schema `atm_db` is up to date. No migration necessary.
-2026-06-05 20:36:06 - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-05 20:36:06 - HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-05 20:36:07 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-05 20:36:07 - HHH10001005: Database info:
+2026-06-08 14:05:57 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08 14:05:57 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:05:57 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08 14:05:57 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08 14:05:58 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-08 14:05:58 - Adding welcome page template: index
+2026-06-08 14:05:58 - Starting ProtocolHandler ["http-nio-9999"]
+2026-06-08 14:05:58 - Tomcat started on port 9999 (http) with context path '/'
+2026-06-08 14:05:58 - Started SpringBootAppApplication in 5.508 seconds (process running for 6.062)
+2026-06-08 14:06:18 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-08 14:06:18 - Initializing Servlet 'dispatcherServlet'
+2026-06-08 14:06:18 - Completed initialization in 1 ms
+2026-06-08 14:06:18 - [[Reached login controller]]
+2026-06-08 14:06:18 - [[Reached Login request method inside Account Service Impl.]]
+2026-06-08 14:06:19 - [[Login method completed.]]
+2026-06-08 14:06:27 - [[Reached 'parse token' method.]]
+2026-06-08 14:06:28 - [[Reached get account info controller]]
+2026-06-08 14:06:28 - Reached get account by token method.
+2026-06-08 14:06:32 - [[Reached 'parse token' method.]]
+2026-06-08 14:06:32 - [[Reached transaction controller.]]
+2026-06-08 14:06:32 - [[Reached get trasactions method inside Account Service Impl.]]
+2026-06-08 14:06:32 - Reached get account by token method.
+2026-06-08 14:06:32 - [[Get transaction method completed.]]
+2026-06-08 14:06:41 - [[Reached 'parse token' method.]]
+2026-06-08 14:06:41 - [[Reached withdraw controller]]
+2026-06-08 14:06:41 - [[Reached withdraw method inside Account Service Impl.]]
+2026-06-08 14:06:41 - Reached get account by token method.
+2026-06-08 14:06:41 - [[Withdraw method completed.]]
+2026-06-08 14:06:48 - [[Reached 'parse token' method.]]
+2026-06-08 14:06:48 - [[Reached deposit controller]]
+2026-06-08 14:06:48 - [[Reached deposit method inside Account Service Impl.]]
+2026-06-08 14:06:48 - Reached get account by token method.
+2026-06-08 14:06:48 - [[Deposit method completed.]]
+2026-06-08 14:06:55 - [[Reached 'parse token' method.]]
+2026-06-08 14:06:55 - [[Reached transfer controller]]
+2026-06-08 14:06:55 - [[Reached transfer method inside Account Service Impl.]]
+2026-06-08 14:06:55 - Reached get account by token method.
+2026-06-08 14:06:55 - [[Transfer method completed.]]
+2026-06-08 14:14:26 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-08 14:14:27 - Graceful shutdown complete
+2026-06-08 14:14:27 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:14:27 - HikariPool-1 - Shutdown initiated...
+2026-06-08 14:14:27 - HikariPool-1 - Shutdown completed.
+2026-06-08 14:32:31 - Starting AccountRestTest using Java 17.0.19 with PID 14440 (started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
+2026-06-08 14:32:31 - No active profile set, falling back to 1 default profile: "default"
+2026-06-08 14:32:31 - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-08 14:32:32 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08 14:32:32 - Finished Spring Data repository scanning in 65 ms. Found 2 JPA repository interfaces.
+2026-06-08 14:32:33 - HikariPool-1 - Starting...
+2026-06-08 14:32:33 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5b715ea
+2026-06-08 14:32:33 - HikariPool-1 - Start completed.
+2026-06-08 14:32:33 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
+2026-06-08 14:32:34 - Successfully validated 2 migrations (execution time 00:00.060s)
+2026-06-08 14:32:34 - Current version of schema `atm_db`: 1
+2026-06-08 14:32:34 - Schema `atm_db` is up to date. No migration necessary.
+2026-06-08 14:32:34 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08 14:32:34 - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08 14:32:35 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08 14:32:35 - HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/atm_db]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
@@ -322,87 +326,32 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-06-05 20:36:08 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-05 20:36:08 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-05 20:36:08 - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-05 20:36:08 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-05 20:36:08 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-06-05 20:36:09 - Adding welcome page template: index
-2026-06-05 20:36:09 - Starting ProtocolHandler ["http-nio-9999"]
-2026-06-05 20:36:09 - Tomcat started on port 9999 (http) with context path '/'
-2026-06-05 20:36:09 - Started SpringBootAppApplication in 5.903 seconds (process running for 6.582)
-2026-06-05 20:36:12 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-05 20:36:12 - Initializing Servlet 'dispatcherServlet'
-2026-06-05 20:36:12 - Completed initialization in 2 ms
-2026-06-05 20:36:12 - [[Reached login controller]]
-2026-06-05 20:36:12 - [[Reached Login request method inside Account Service Impl.]]
-2026-06-05 20:36:13 - [[Finished Login request method.]]
-2026-06-05 20:36:30 - [[Reached 'parse token' method.]]
-2026-06-05 20:36:30 - [[Reached transfer controller]]
-2026-06-05 20:36:30 - [[Reached transfer method inside Account Service Impl.]]
-2026-06-05 20:36:30 - Reached get account by token method.
-2026-06-05 20:36:41 - [[Reached 'parse token' method.]]
-2026-06-05 20:36:41 - [[Reached transfer controller]]
-2026-06-05 20:36:41 - [[Reached transfer method inside Account Service Impl.]]
-2026-06-05 20:36:41 - Reached get account by token method.
-2026-06-05 20:36:41 - Unhandled exception at com.talent.batch11.springbootapp.serviceimpl.AccountServiceimpl.transferMoneyApi (Line:373): Invalid password
-2026-06-05 20:36:45 - [[Reached 'parse token' method.]]
-2026-06-05 20:36:45 - [[Reached topup controller]]
-2026-06-05 20:36:45 - [[Reached top up method inside Account Service Impl.]]
-2026-06-05 20:36:45 - Reached get account by token method.
-2026-06-05 20:36:49 - [[Reached 'parse token' method.]]
-2026-06-05 20:36:49 - Unhandled exception at org.springframework.http.converter.AbstractJacksonHttpMessageConverter.readJavaType (Line:363): JSON parse error: Unexpected character ('g' (code 103)): was expecting comma to separate Object entries
-2026-06-05 20:36:54 - [[Reached 'parse token' method.]]
-2026-06-05 20:36:54 - [[Reached withdraw controller]]
-2026-06-05 20:36:54 - [[Reached withdraw method inside Account Service Impl.]]
-2026-06-05 20:36:54 - Reached get account by token method.
-2026-06-05 20:36:56 - [[Reached 'parse token' method.]]
-2026-06-05 20:36:56 - Unhandled exception at org.springframework.http.converter.AbstractJacksonHttpMessageConverter.readJavaType (Line:363): JSON parse error: Unexpected character ('g' (code 103)): was expecting comma to separate Object entries
-2026-06-05 20:37:00 - [[Reached 'parse token' method.]]
-2026-06-05 20:37:00 - [[Reached deposit controller]]
-2026-06-05 20:37:00 - [[Reached deposit method inside Account Service Impl.]]
-2026-06-05 20:37:00 - Reached get account by token method.
-2026-06-05 20:37:04 - [[Reached 'parse token' method.]]
-2026-06-05 20:37:04 - Unhandled exception at org.springframework.http.converter.AbstractJacksonHttpMessageConverter.readJavaType (Line:363): JSON parse error: Unexpected character ('h' (code 104)): was expecting double-quote to start property name
-2026-06-05 20:38:23 - [[Reached register controller]]
-2026-06-05 20:38:23 - [[Reached register method inside Account Service Impl.]]
-2026-06-05 20:38:23 - [[Finished register method.]]
-2026-06-05 20:38:28 - Unhandled exception at org.springframework.http.converter.AbstractJacksonHttpMessageConverter.readJavaType (Line:363): JSON parse error: Unexpected character ('j' (code 106)): was expecting comma to separate Object entries
-2026-06-05 20:38:56 - [[Reached 'parse token' method.]]
-2026-06-05 20:38:56 - No handler/resource found at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest (Line:526): No static resource account/3 for request '/account/3'.
-2026-06-05 20:39:07 - [[Reached 'parse token' method.]]
-2026-06-05 20:39:07 - No handler/resource found at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest (Line:526): No static resource account/4 for request '/account/4'.
-2026-06-05 20:39:34 - [[Reached 'parse token' method.]]
-2026-06-05 20:39:34 - Reached get account by token method.
-2026-06-05 20:39:34 - ResponseStatusException at com.talent.batch11.springbootapp.serviceimpl.TokenServiceImpl.getAccountByToken (Line:132): Invalid or expired token. (401 UNAUTHORIZED)
-2026-06-05 20:39:35 - [[Reached 'parse token' method.]]
-2026-06-05 20:39:35 - Reached get account by token method.
-2026-06-05 20:39:35 - ResponseStatusException at com.talent.batch11.springbootapp.serviceimpl.TokenServiceImpl.getAccountByToken (Line:132): Invalid or expired token. (401 UNAUTHORIZED)
-2026-06-05 20:43:56 - Commencing graceful shutdown. Waiting for active requests to complete
-2026-06-05 20:43:56 - Graceful shutdown complete
-2026-06-05 20:43:56 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-06-05 20:43:56 - HikariPool-1 - Shutdown initiated...
-2026-06-05 20:43:56 - HikariPool-1 - Shutdown completed.
-2026-06-05 20:44:01 - Starting SpringBootAppApplication using Java 17.0.19 with PID 13428 (C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app\build\classes\java\main started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
-2026-06-05 20:44:01 - No active profile set, falling back to 1 default profile: "default"
-2026-06-05 20:44:02 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-05 20:44:02 - Finished Spring Data repository scanning in 65 ms. Found 2 JPA repository interfaces.
-2026-06-05 20:44:02 - Tomcat initialized with port 9999 (http)
-2026-06-05 20:44:02 - Initializing ProtocolHandler ["http-nio-9999"]
-2026-06-05 20:44:02 - Starting service [Tomcat]
-2026-06-05 20:44:02 - Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-05 20:44:02 - Root WebApplicationContext: initialization completed in 1543 ms
-2026-06-05 20:44:03 - HikariPool-1 - Starting...
-2026-06-05 20:44:03 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@31f31b20
-2026-06-05 20:44:03 - HikariPool-1 - Start completed.
-2026-06-05 20:44:03 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
-2026-06-05 20:44:03 - Successfully validated 2 migrations (execution time 00:00.036s)
-2026-06-05 20:44:03 - Current version of schema `atm_db`: 1
-2026-06-05 20:44:03 - Schema `atm_db` is up to date. No migration necessary.
-2026-06-05 20:44:03 - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-05 20:44:04 - HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-05 20:44:04 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-05 20:44:04 - HHH10001005: Database info:
+2026-06-08 14:32:36 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08 14:32:36 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:32:36 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08 14:32:36 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08 14:32:37 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-08 14:32:37 - Adding welcome page template: index
+2026-06-08 14:32:37 - Started AccountRestTest in 7.125 seconds (process running for 9.308)
+2026-06-08 14:32:38 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:32:38 - HikariPool-1 - Shutdown initiated...
+2026-06-08 14:32:38 - HikariPool-1 - Shutdown completed.
+2026-06-08 14:33:25 - Starting AccountRestTest using Java 17.0.19 with PID 4692 (started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
+2026-06-08 14:33:25 - No active profile set, falling back to 1 default profile: "default"
+2026-06-08 14:33:25 - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-08 14:33:26 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08 14:33:26 - Finished Spring Data repository scanning in 72 ms. Found 2 JPA repository interfaces.
+2026-06-08 14:33:27 - HikariPool-1 - Starting...
+2026-06-08 14:33:27 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b3a8455
+2026-06-08 14:33:27 - HikariPool-1 - Start completed.
+2026-06-08 14:33:27 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
+2026-06-08 14:33:27 - Successfully validated 2 migrations (execution time 00:00.054s)
+2026-06-08 14:33:28 - Current version of schema `atm_db`: 1
+2026-06-08 14:33:28 - Schema `atm_db` is up to date. No migration necessary.
+2026-06-08 14:33:28 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08 14:33:28 - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08 14:33:28 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08 14:33:28 - HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/atm_db]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
@@ -414,26 +363,368 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-06-05 20:44:05 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-05 20:44:05 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-05 20:44:05 - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-05 20:44:06 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-05 20:44:06 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-06-05 20:44:06 - Adding welcome page template: index
-2026-06-05 20:44:06 - Starting ProtocolHandler ["http-nio-9999"]
-2026-06-05 20:44:06 - Tomcat started on port 9999 (http) with context path '/'
-2026-06-05 20:44:06 - Started SpringBootAppApplication in 5.963 seconds (process running for 6.63)
-2026-06-05 20:44:11 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-05 20:44:11 - Initializing Servlet 'dispatcherServlet'
-2026-06-05 20:44:11 - Completed initialization in 1 ms
-2026-06-05 20:44:11 - [[Reached login controller]]
-2026-06-05 20:44:11 - [[Reached Login request method inside Account Service Impl.]]
-2026-06-05 20:44:12 - [[Finished Login request method.]]
-2026-06-05 20:44:15 - [[Reached 'parse token' method.]]
-2026-06-05 20:44:15 - [[Reached get account info controller]]
-2026-06-05 20:44:15 - Reached get account by token method.
-2026-06-05 20:44:28 - Commencing graceful shutdown. Waiting for active requests to complete
-2026-06-05 20:44:28 - Graceful shutdown complete
-2026-06-05 20:44:28 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-06-05 20:44:28 - HikariPool-1 - Shutdown initiated...
-2026-06-05 20:44:28 - HikariPool-1 - Shutdown completed.
+2026-06-08 14:33:30 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08 14:33:30 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:33:30 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08 14:33:30 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08 14:33:30 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-08 14:33:31 - Adding welcome page template: index
+2026-06-08 14:33:31 - Started AccountRestTest in 6.574 seconds (process running for 8.203)
+2026-06-08 14:33:32 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:33:32 - HikariPool-1 - Shutdown initiated...
+2026-06-08 14:33:32 - HikariPool-1 - Shutdown completed.
+2026-06-08 14:36:53 - Starting AccountRestTest using Java 17.0.19 with PID 11804 (started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
+2026-06-08 14:36:53 - No active profile set, falling back to 1 default profile: "default"
+2026-06-08 14:36:53 - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-08 14:36:54 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08 14:36:54 - Finished Spring Data repository scanning in 79 ms. Found 2 JPA repository interfaces.
+2026-06-08 14:36:55 - HikariPool-1 - Starting...
+2026-06-08 14:36:56 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5b715ea
+2026-06-08 14:36:56 - HikariPool-1 - Start completed.
+2026-06-08 14:36:56 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
+2026-06-08 14:36:56 - Successfully validated 2 migrations (execution time 00:00.055s)
+2026-06-08 14:36:56 - Current version of schema `atm_db`: 1
+2026-06-08 14:36:56 - Schema `atm_db` is up to date. No migration necessary.
+2026-06-08 14:36:56 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08 14:36:56 - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08 14:36:57 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08 14:36:57 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/atm_db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: atm_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08 14:36:59 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08 14:36:59 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:36:59 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08 14:37:00 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08 14:37:00 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-08 14:37:01 - Adding welcome page template: index
+2026-06-08 14:37:02 - Started AccountRestTest in 9.294 seconds (process running for 10.971)
+2026-06-08 14:37:02 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:37:03 - HikariPool-1 - Shutdown initiated...
+2026-06-08 14:37:03 - HikariPool-1 - Shutdown completed.
+2026-06-08 14:37:12 - Starting AccountRestTest using Java 17.0.19 with PID 5376 (started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
+2026-06-08 14:37:12 - No active profile set, falling back to 1 default profile: "default"
+2026-06-08 14:37:12 - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-08 14:37:13 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08 14:37:13 - Finished Spring Data repository scanning in 80 ms. Found 2 JPA repository interfaces.
+2026-06-08 14:37:14 - HikariPool-1 - Starting...
+2026-06-08 14:37:14 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e67d3b7
+2026-06-08 14:37:14 - HikariPool-1 - Start completed.
+2026-06-08 14:37:14 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
+2026-06-08 14:37:15 - Successfully validated 2 migrations (execution time 00:00.066s)
+2026-06-08 14:37:15 - Current version of schema `atm_db`: 1
+2026-06-08 14:37:15 - Schema `atm_db` is up to date. No migration necessary.
+2026-06-08 14:37:15 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08 14:37:15 - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08 14:37:16 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08 14:37:16 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/atm_db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: atm_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08 14:37:17 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08 14:37:17 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:37:18 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08 14:37:18 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08 14:37:18 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-08 14:37:19 - Adding welcome page template: index
+2026-06-08 14:37:19 - Started AccountRestTest in 8.332 seconds (process running for 10.132)
+2026-06-08 14:37:20 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:37:20 - HikariPool-1 - Shutdown initiated...
+2026-06-08 14:37:20 - HikariPool-1 - Shutdown completed.
+2026-06-08 14:40:11 - Starting AccountRestTest using Java 17.0.19 with PID 9228 (started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
+2026-06-08 14:40:11 - No active profile set, falling back to 1 default profile: "default"
+2026-06-08 14:40:11 - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-08 14:40:12 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08 14:40:12 - Finished Spring Data repository scanning in 67 ms. Found 2 JPA repository interfaces.
+2026-06-08 14:40:13 - HikariPool-1 - Starting...
+2026-06-08 14:40:13 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e67d3b7
+2026-06-08 14:40:13 - HikariPool-1 - Start completed.
+2026-06-08 14:40:13 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
+2026-06-08 14:40:14 - Successfully validated 2 migrations (execution time 00:00.053s)
+2026-06-08 14:40:14 - Current version of schema `atm_db`: 1
+2026-06-08 14:40:14 - Schema `atm_db` is up to date. No migration necessary.
+2026-06-08 14:40:14 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08 14:40:14 - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08 14:40:15 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08 14:40:15 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/atm_db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: atm_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08 14:40:16 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08 14:40:16 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:40:16 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08 14:40:16 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08 14:40:16 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-08 14:40:17 - Adding welcome page template: index
+2026-06-08 14:40:17 - Started AccountRestTest in 6.567 seconds (process running for 8.13)
+2026-06-08 14:40:18 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:40:18 - HikariPool-1 - Shutdown initiated...
+2026-06-08 14:40:18 - HikariPool-1 - Shutdown completed.
+2026-06-08 14:42:29 - Starting AccountRestTest using Java 17.0.19 with PID 5076 (started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
+2026-06-08 14:42:29 - No active profile set, falling back to 1 default profile: "default"
+2026-06-08 14:42:29 - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-08 14:42:30 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08 14:42:30 - Finished Spring Data repository scanning in 68 ms. Found 2 JPA repository interfaces.
+2026-06-08 14:42:31 - HikariPool-1 - Starting...
+2026-06-08 14:42:31 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e67d3b7
+2026-06-08 14:42:31 - HikariPool-1 - Start completed.
+2026-06-08 14:42:31 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
+2026-06-08 14:42:32 - Successfully validated 2 migrations (execution time 00:00.056s)
+2026-06-08 14:42:32 - Current version of schema `atm_db`: 1
+2026-06-08 14:42:32 - Schema `atm_db` is up to date. No migration necessary.
+2026-06-08 14:42:32 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08 14:42:32 - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08 14:42:32 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08 14:42:33 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/atm_db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: atm_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08 14:42:34 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08 14:42:34 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:42:34 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08 14:42:34 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08 14:42:34 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-08 14:42:35 - Adding welcome page template: index
+2026-06-08 14:42:35 - Started AccountRestTest in 6.439 seconds (process running for 8.422)
+2026-06-08 14:42:36 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:42:36 - HikariPool-1 - Shutdown initiated...
+2026-06-08 14:42:36 - HikariPool-1 - Shutdown completed.
+2026-06-08 14:44:23 - Starting SpringBootAppApplication using Java 17.0.19 with PID 4744 (C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app\build\classes\java\main started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
+2026-06-08 14:44:23 - No active profile set, falling back to 1 default profile: "default"
+2026-06-08 14:44:23 - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-08 14:44:23 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08 14:44:23 - Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
+2026-06-08 14:44:24 - Tomcat initialized with port 9999 (http)
+2026-06-08 14:44:24 - Initializing ProtocolHandler ["http-nio-9999"]
+2026-06-08 14:44:24 - Starting service [Tomcat]
+2026-06-08 14:44:24 - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08 14:44:24 - Root WebApplicationContext: initialization completed in 1300 ms
+2026-06-08 14:44:24 - HikariPool-1 - Starting...
+2026-06-08 14:44:25 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@d66502
+2026-06-08 14:44:25 - HikariPool-1 - Start completed.
+2026-06-08 14:44:25 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
+2026-06-08 14:44:25 - Successfully validated 2 migrations (execution time 00:00.028s)
+2026-06-08 14:44:25 - Current version of schema `atm_db`: 1
+2026-06-08 14:44:25 - Schema `atm_db` is up to date. No migration necessary.
+2026-06-08 14:44:25 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08 14:44:25 - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08 14:44:25 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08 14:44:26 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/atm_db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: atm_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08 14:44:27 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08 14:44:27 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:44:27 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08 14:44:27 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08 14:44:27 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-08 14:44:27 - Adding welcome page template: index
+2026-06-08 14:44:27 - Starting ProtocolHandler ["http-nio-9999"]
+2026-06-08 14:44:28 - Tomcat started on port 9999 (http) with context path '/'
+2026-06-08 14:44:28 - Started SpringBootAppApplication in 5.415 seconds (process running for 6.007)
+2026-06-08 14:44:40 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-08 14:44:40 - Graceful shutdown complete
+2026-06-08 14:44:40 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:44:40 - HikariPool-1 - Shutdown initiated...
+2026-06-08 14:44:40 - HikariPool-1 - Shutdown completed.
+2026-06-08 14:44:44 - Starting SpringBootAppApplication using Java 17.0.19 with PID 15180 (C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app\build\classes\java\main started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
+2026-06-08 14:44:44 - No active profile set, falling back to 1 default profile: "default"
+2026-06-08 14:44:44 - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-08 14:44:44 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08 14:44:44 - Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
+2026-06-08 14:44:45 - Tomcat initialized with port 9999 (http)
+2026-06-08 14:44:45 - Initializing ProtocolHandler ["http-nio-9999"]
+2026-06-08 14:44:45 - Starting service [Tomcat]
+2026-06-08 14:44:45 - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08 14:44:45 - Root WebApplicationContext: initialization completed in 1207 ms
+2026-06-08 14:44:45 - HikariPool-1 - Starting...
+2026-06-08 14:44:46 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5c5c7cc4
+2026-06-08 14:44:46 - HikariPool-1 - Start completed.
+2026-06-08 14:44:46 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
+2026-06-08 14:44:46 - Successfully validated 2 migrations (execution time 00:00.029s)
+2026-06-08 14:44:46 - Current version of schema `atm_db`: 1
+2026-06-08 14:44:46 - Schema `atm_db` is up to date. No migration necessary.
+2026-06-08 14:44:46 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08 14:44:46 - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08 14:44:46 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08 14:44:46 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/atm_db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: atm_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08 14:44:47 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08 14:44:47 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:44:47 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08 14:44:48 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08 14:44:48 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-08 14:44:48 - Adding welcome page template: index
+2026-06-08 14:44:48 - Starting ProtocolHandler ["http-nio-9999"]
+2026-06-08 14:44:48 - Tomcat started on port 9999 (http) with context path '/'
+2026-06-08 14:44:48 - Started SpringBootAppApplication in 5.224 seconds (process running for 5.887)
+2026-06-08 14:45:03 - Starting AccountRestTest using Java 17.0.19 with PID 9424 (started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
+2026-06-08 14:45:03 - No active profile set, falling back to 1 default profile: "default"
+2026-06-08 14:45:03 - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-08 14:45:04 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08 14:45:04 - Finished Spring Data repository scanning in 75 ms. Found 2 JPA repository interfaces.
+2026-06-08 14:45:05 - HikariPool-1 - Starting...
+2026-06-08 14:45:05 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@62f37bfd
+2026-06-08 14:45:05 - HikariPool-1 - Start completed.
+2026-06-08 14:45:06 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
+2026-06-08 14:45:06 - Successfully validated 2 migrations (execution time 00:00.056s)
+2026-06-08 14:45:06 - Current version of schema `atm_db`: 1
+2026-06-08 14:45:06 - Schema `atm_db` is up to date. No migration necessary.
+2026-06-08 14:45:06 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08 14:45:06 - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08 14:45:07 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08 14:45:07 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/atm_db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: atm_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08 14:45:08 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08 14:45:08 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:45:08 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08 14:45:08 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08 14:45:08 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-08 14:45:09 - Adding welcome page template: index
+2026-06-08 14:45:09 - Started AccountRestTest in 7.218 seconds (process running for 8.894)
+2026-06-08 14:45:10 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-08 14:45:10 - Initializing Servlet 'dispatcherServlet'
+2026-06-08 14:45:10 - Completed initialization in 1 ms
+2026-06-08 14:45:10 - Validation failed at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument (Line:165): phoneNumber: must be less than or equal to 11
+2026-06-08 14:45:10 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:45:10 - HikariPool-1 - Shutdown initiated...
+2026-06-08 14:45:10 - HikariPool-1 - Shutdown completed.
+2026-06-08 14:50:56 - [[Reached login controller]]
+2026-06-08 14:50:57 - [[Reached Login request method inside Account Service Impl.]]
+2026-06-08 14:50:57 - [[Login method completed.]]
+2026-06-08 14:53:31 - [[Reached 'parse token' method.]]
+2026-06-08 14:53:31 - [[Reached transaction controller.]]
+2026-06-08 14:53:31 - [[Reached get trasactions method inside Account Service Impl.]]
+2026-06-08 14:53:31 - Reached get account by token method.
+2026-06-08 14:53:31 - [[Get transaction method completed.]]
+2026-06-08 14:53:52 - Starting AccountRestTest using Java 17.0.19 with PID 16272 (started by nawmu in C:\Users\nawmu\Downloads\spring-boot-app\spring-boot-app)
+2026-06-08 14:53:52 - No active profile set, falling back to 1 default profile: "default"
+2026-06-08 14:53:52 - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-08 14:53:53 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08 14:53:53 - Finished Spring Data repository scanning in 76 ms. Found 2 JPA repository interfaces.
+2026-06-08 14:53:54 - HikariPool-1 - Starting...
+2026-06-08 14:53:55 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@60ee7a51
+2026-06-08 14:53:55 - HikariPool-1 - Start completed.
+2026-06-08 14:53:55 - Database: jdbc:mysql://localhost:3306/atm_db (MySQL 8.0)
+2026-06-08 14:53:55 - Successfully validated 2 migrations (execution time 00:00.064s)
+2026-06-08 14:53:55 - Current version of schema `atm_db`: 1
+2026-06-08 14:53:55 - Schema `atm_db` is up to date. No migration necessary.
+2026-06-08 14:53:55 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08 14:53:55 - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08 14:53:56 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08 14:53:56 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/atm_db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: atm_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08 14:53:57 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08 14:53:57 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:53:57 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08 14:53:58 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08 14:53:58 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-08 14:53:58 - Adding welcome page template: index
+2026-06-08 14:53:59 - Started AccountRestTest in 7.433 seconds (process running for 9.2)
+2026-06-08 14:53:59 - [[Reached 'parse token' method.]]
+2026-06-08 14:53:59 - [[Reached withdraw controller]]
+2026-06-08 14:53:59 - [[Reached withdraw method inside Account Service Impl.]]
+2026-06-08 14:53:59 - Reached get account by token method.
+2026-06-08 14:53:59 - [[Withdraw method completed.]]
+2026-06-08 14:54:00 - Validation failed at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument (Line:165): confirmPassword: must not be null
+2026-06-08 14:54:00 - [[Reached 'parse token' method.]]
+2026-06-08 14:54:00 - [[Reached get account info controller]]
+2026-06-08 14:54:00 - [[Reached get account method inside Account Service Impl.]]
+2026-06-08 14:54:00 - Reached get account by token method.
+2026-06-08 14:54:00 - [[Get account method completed.]]
+2026-06-08 14:54:00 - [[Reached login controller]]
+2026-06-08 14:54:00 - [[Reached Login request method inside Account Service Impl.]]
+2026-06-08 14:54:00 - [[Login method completed.]]
+2026-06-08 14:54:00 - [[Reached 'parse token' method.]]
+2026-06-08 14:54:00 - [[Reached withdraw controller]]
+2026-06-08 14:54:00 - [[Reached withdraw method inside Account Service Impl.]]
+2026-06-08 14:54:00 - Reached get account by token method.
+2026-06-08 14:54:00 - [[Withdraw method completed.]]
+2026-06-08 14:54:00 - [[Reached 'parse token' method.]]
+2026-06-08 14:54:00 - [[Reached transaction controller.]]
+2026-06-08 14:54:00 - [[Reached get trasactions method inside Account Service Impl.]]
+2026-06-08 14:54:00 - Reached get account by token method.
+2026-06-08 14:54:00 - [[Get transaction method completed.]]
+2026-06-08 14:54:00 - [[Reached 'parse token' method.]]
+2026-06-08 14:54:00 - [[Reached transfer controller]]
+2026-06-08 14:54:00 - [[Reached transfer method inside Account Service Impl.]]
+2026-06-08 14:54:00 - Reached get account by token method.
+2026-06-08 14:54:00 - [[Transfer method completed.]]
+2026-06-08 14:54:00 - [[Reached 'parse token' method.]]
+2026-06-08 14:54:00 - [[Reached deposit controller]]
+2026-06-08 14:54:00 - [[Reached deposit method inside Account Service Impl.]]
+2026-06-08 14:54:00 - Reached get account by token method.
+2026-06-08 14:54:00 - [[Deposit method completed.]]
+2026-06-08 14:54:00 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08 14:54:00 - HikariPool-1 - Shutdown initiated...
+2026-06-08 14:54:00 - HikariPool-1 - Shutdown completed.

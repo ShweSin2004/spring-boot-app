@@ -1,5 +1,6 @@
 package com.talent.batch11.springbootapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -37,7 +38,7 @@ public class Account extends AbstractEntity{
 
     private double balance;
 
-    @ToString.Exclude
+    @JsonIgnore
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL
             , orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Transaction> transactions = new ArrayList<>();

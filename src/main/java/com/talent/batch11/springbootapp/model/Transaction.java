@@ -13,8 +13,6 @@ import lombok.ToString;
 @Table(name = "transaction")
 public class Transaction extends AbstractEntity{
 
-
-    @ToString.Exclude
     @ManyToOne()
     @JoinColumn(name = "account_id")
     @JsonIgnore

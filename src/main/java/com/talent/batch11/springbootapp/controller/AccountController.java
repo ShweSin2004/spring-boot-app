@@ -92,7 +92,7 @@ public class AccountController {
         Account loginAccount = (Account) session.getAttribute("accountInfo");
         model.addAttribute("currentAccount", loginAccount);
         model.addAttribute("transactions",
-                accountService.getAllTransactionsByAccountId(loginAccount.getId()));
+                transactionServiceimpl.getAllTransactionsByAccountId(loginAccount.getId()));
         return "dashboard";
     }
 

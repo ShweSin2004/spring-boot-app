@@ -23,6 +23,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.talent.batch11.springbootapp.dto.request.LoginInfo;
 import org.slf4j.Logger;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -221,9 +222,11 @@ public class AccountServiceimpl implements AccountService {
 
     @Override
     public ResponseEntity<CommonResponse> getAccountInfo(String authHeader) {
-        String apiName = "/account";
+        logger.info("[[Reached get account method inside Account Service Impl.]]");
+        apiName = "/account";
         String token = authHeader.substring(7);
         Account account = tokenService.getAccountByToken(token);
+        logger.info("[[Get account method completed.]]");
         return ResponseUtils.makeCommonResponse(apiName, HttpStatus.OK, account, Boolean.TRUE,
                 "This is your account info.");
     }
@@ -241,21 +244,16 @@ public class AccountServiceimpl implements AccountService {
 
 
     @Override
-    public List<Transaction> getAllTransactionsByAccountId(long accountId) {
-
-        Account account = accountRepository.findAccountById(accountId);
-        return  account.getTransactions();
-    }
-
-    @Override
+    @Transactional
     public ResponseEntity<CommonResponse> handleLoginRequest(LoginInfoApi loginInfoApi) {
         logger.info("[[Reached Login request method inside Account Service Impl.]]");
 
         apiName = "/account/login";
 
         Account account = accountRepository.findAccountByEmail(loginInfoApi.email());
+
         if (account == null || !account.getPassword().equals(loginInfoApi.password())) {
-            throw new RuntimeException("Invalid email or password");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
 
         String accessToken = tokenService.generateAccessToken(account);
@@ -265,20 +263,29 @@ public class AccountServiceimpl implements AccountService {
         headers.add("accessToken",  accessToken);
         headers.add("refreshToken",  refreshToken);
 
-        logger.info("[[Finished Login request method.]]");
-
         CommonResponse commonResponse = new CommonResponse();
-        commonResponse.setData(account);
-        commonResponse.setSuccess(true);
-        commonResponse.setMessage("Logged in successfully");
-        commonResponse.setApiName(apiName);
-        commonResponse.setSystemDateTime(LocalDateTime.now());
-        commonResponse.setHttpStatusCode(HttpStatus.OK);
 
+        if (account.getRole().equalsIgnoreCase("user")) {
+            commonResponse.setData(account);
+            commonResponse.setSuccess(true);
+            commonResponse.setMessage("Logged in successfully");
+            commonResponse.setApiName(apiName);
+            commonResponse.setSystemDateTime(LocalDateTime.now());
+            commonResponse.setHttpStatusCode(HttpStatus.OK);
+        }  else {
+            commonResponse.setData(accountRepository.findAll());
+            commonResponse.setSuccess(true);
+            commonResponse.setMessage("Logged in successfully");
+            commonResponse.setApiName(apiName);
+            commonResponse.setSystemDateTime(LocalDateTime.now());
+            commonResponse.setHttpStatusCode(HttpStatus.OK);
+        }
+        logger.info("[[Login method completed.]]");
         return new ResponseEntity<> (commonResponse, headers, HttpStatus.OK);
     }
 
     @Override
+    @Transactional
     public ResponseEntity<CommonResponse> depositMoneyApi(String authHeader, ServiceRequestApi serviceRequestApi) {
 
         apiName = "/account/deposit";
@@ -287,10 +294,14 @@ public class AccountServiceimpl implements AccountService {
         String token = authHeader.substring(7);
         Account account = tokenService.getAccountByToken(token);
 
+        if (account == null) {
+            throw new NullPointerException();
+        }
+
         double previous_amount = account.getBalance();
 
         if (serviceRequestApi.amount() <= 0) {
-            throw new RuntimeException("Invalid amount.");
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE);
         }
 
         account.setBalance(account.getBalance() + serviceRequestApi.amount());
@@ -302,13 +313,17 @@ public class AccountServiceimpl implements AccountService {
         tx.setPrevious_amount(previous_amount);
         tx.setTransactionType(TransactionType.DEPOSIT_MONEY);
         transactionRepository.save(tx);
+        logger.info("[[Deposit method completed.]]");
         return ResponseUtils.makeCommonResponse(apiName, HttpStatus.OK, account, Boolean.TRUE,
                 "Deposit money successfully.");
     }
 
     @Override
+    @Transactional
     public ResponseEntity<CommonResponse> registerApi(RegisterInfoApi registerInfo) {
         logger.info("[[Reached register method inside Account Service Impl.]]");
+
+        apiName = "/account/register";
         Account signUpAcc = new Account();
 
         signUpAcc.setName(registerInfo.name());
@@ -316,7 +331,11 @@ public class AccountServiceimpl implements AccountService {
         signUpAcc.setPassword(registerInfo.password());
         signUpAcc.setPhoneNumber(registerInfo.phoneNumber());
         signUpAcc.setAddress(registerInfo.address());
-        signUpAcc.setRole(registerInfo.role());
+        if (registerInfo.role() == null) {
+            signUpAcc.setRole("User");
+        } else {
+            signUpAcc.setRole(registerInfo.role());
+        }
 
         signUpAcc.setBalance(0);
         saveAccount(signUpAcc);
@@ -327,16 +346,23 @@ public class AccountServiceimpl implements AccountService {
     }
 
     @Override
+    @Transactional
     public ResponseEntity<CommonResponse> withdrawMoneyApi(String authHeader, ServiceRequestApi serviceRequestApi) {
         logger.info("[[Reached withdraw method inside Account Service Impl.]]");
+
+        apiName = "/account/withdraw";
 
         String token = authHeader.substring(7);
         Account account = tokenService.getAccountByToken(token);
 
+        if (account == null) {
+            throw new NullPointerException();
+        }
+
         double previous_amount = account.getBalance();
 
         if (serviceRequestApi.amount() <= 0 || serviceRequestApi.amount() > account.getBalance()) {
-            throw new RuntimeException("Invalid amount.");
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE);
         }
 
         account.setBalance(account.getBalance() - serviceRequestApi.amount());
@@ -348,16 +374,24 @@ public class AccountServiceimpl implements AccountService {
         tx.setPrevious_amount(previous_amount);
         tx.setTransactionType(TransactionType.WITHDRAW_MONEY);
         transactionRepository.save(tx);
+        logger.info("[[Withdraw method completed.]]");
         return ResponseUtils.makeCommonResponse(apiName, HttpStatus.OK, account, Boolean.TRUE,
                 "Transferred money successfully.");
     }
 
     @Override
+    @Transactional
     public ResponseEntity<CommonResponse> transferMoneyApi(String authHeader, TransferMoneyInfoApi transferMoneyInfoApi) {
         logger.info("[[Reached transfer method inside Account Service Impl.]]");
 
         String token = authHeader.substring(7);
         Account account = tokenService.getAccountByToken(token);
+        apiName = "/account/transfer";
+
+        if (account == null) {
+            throw new NullPointerException();
+        }
+
         Account receiver = accountRepository.findAccountByPhoneNumber(transferMoneyInfoApi.receiver_phone());
 
         double accountPreviousAmount = account.getBalance();
@@ -372,12 +406,12 @@ public class AccountServiceimpl implements AccountService {
 
         if (!account.getPassword().equals(transferMoneyInfoApi.password())) {
             System.out.println("Incorrect password.");
-            throw new RuntimeException("Invalid password");
+            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY);
         }
 
         if (amount <= 0 || amount > account.getBalance()) {
             System.out.println("Invalid amount.");
-            throw new RuntimeException("Invalid amount");
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE);
         }
 
         account.setBalance(account.getBalance() - amount);
@@ -397,22 +431,28 @@ public class AccountServiceimpl implements AccountService {
         tr.setPrevious_amount(receiverPreviousAmount);
         tr.setTransactionType(TransactionType.RECEIVE_MONEY);
         transactionRepository.save(tr);
-
+        logger.info("[[Transfer method completed.]]");
         return ResponseUtils.makeCommonResponse(apiName, HttpStatus.OK, account, Boolean.TRUE,
                 "Transferred money successfully.");
     }
 
     @Override
+    @Transactional
     public ResponseEntity<CommonResponse> topUpApi(String authHeader, ServiceRequestApi serviceRequestApi) {
         logger.info("[[Reached top up method inside Account Service Impl.]]");
 
         String token = authHeader.substring(7);
         Account account = tokenService.getAccountByToken(token);
+        apiName = "/account/topup";
+
+        if (account == null) {
+            throw new NullPointerException();
+        }
 
         double previous_amount = account.getBalance();
 
         if (serviceRequestApi.amount() <= 0 || serviceRequestApi.amount() > account.getBalance()) {
-            throw new RuntimeException("Invalid amount.");
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE);
         }
 
         account.setBalance(account.getBalance() - serviceRequestApi.amount());
@@ -424,7 +464,10 @@ public class AccountServiceimpl implements AccountService {
         tx.setPrevious_amount(previous_amount);
         tx.setTransactionType(TransactionType.WITHDRAW_MONEY);
         transactionRepository.save(tx);
+
+        logger.info("[[Top up method completed.]]");
         return ResponseUtils.makeCommonResponse(apiName, HttpStatus.OK, account, Boolean.TRUE,
                 "Top up money successfully.");
     }
+
 }
