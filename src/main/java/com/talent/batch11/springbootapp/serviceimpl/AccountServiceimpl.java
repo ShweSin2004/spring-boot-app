@@ -226,7 +226,7 @@ public class AccountServiceimpl implements AccountService {
         apiName = "/account";
         String token = authHeader.substring(7);
         Account account = tokenService.getAccountByToken(token);
-        logger.info("[[Get account method completed.]]");
+        logger.info("[[Completed get account method.]]");
         return ResponseUtils.makeCommonResponse(apiName, HttpStatus.OK, account, Boolean.TRUE,
                 "This is your account info.");
     }
@@ -280,7 +280,7 @@ public class AccountServiceimpl implements AccountService {
             commonResponse.setSystemDateTime(LocalDateTime.now());
             commonResponse.setHttpStatusCode(HttpStatus.OK);
         }
-        logger.info("[[Login method completed.]]");
+        logger.info("[[Completed Login method.]]");
         return new ResponseEntity<> (commonResponse, headers, HttpStatus.OK);
     }
 
@@ -313,7 +313,7 @@ public class AccountServiceimpl implements AccountService {
         tx.setPrevious_amount(previous_amount);
         tx.setTransactionType(TransactionType.DEPOSIT_MONEY);
         transactionRepository.save(tx);
-        logger.info("[[Deposit method completed.]]");
+        logger.info("[[Completed Deposit method.]]");
         return ResponseUtils.makeCommonResponse(apiName, HttpStatus.OK, account, Boolean.TRUE,
                 "Deposit money successfully.");
     }
@@ -340,7 +340,7 @@ public class AccountServiceimpl implements AccountService {
         signUpAcc.setBalance(0);
         saveAccount(signUpAcc);
 
-        logger.info("[[Finished register method.]]");
+        logger.info("[[Completed register method.]]");
         return ResponseUtils.makeCommonResponse(apiName, HttpStatus.OK, signUpAcc, Boolean.TRUE,
                 "Deposit money successfully.");
     }
@@ -374,7 +374,7 @@ public class AccountServiceimpl implements AccountService {
         tx.setPrevious_amount(previous_amount);
         tx.setTransactionType(TransactionType.WITHDRAW_MONEY);
         transactionRepository.save(tx);
-        logger.info("[[Withdraw method completed.]]");
+        logger.info("[[Completed Withdraw method.]]");
         return ResponseUtils.makeCommonResponse(apiName, HttpStatus.OK, account, Boolean.TRUE,
                 "Transferred money successfully.");
     }
@@ -431,7 +431,7 @@ public class AccountServiceimpl implements AccountService {
         tr.setPrevious_amount(receiverPreviousAmount);
         tr.setTransactionType(TransactionType.RECEIVE_MONEY);
         transactionRepository.save(tr);
-        logger.info("[[Transfer method completed.]]");
+        logger.info("[[Completed Transfer method.]]");
         return ResponseUtils.makeCommonResponse(apiName, HttpStatus.OK, account, Boolean.TRUE,
                 "Transferred money successfully.");
     }
@@ -465,7 +465,7 @@ public class AccountServiceimpl implements AccountService {
         tx.setTransactionType(TransactionType.WITHDRAW_MONEY);
         transactionRepository.save(tx);
 
-        logger.info("[[Top up method completed.]]");
+        logger.info("[[Completed Top up method.]]");
         return ResponseUtils.makeCommonResponse(apiName, HttpStatus.OK, account, Boolean.TRUE,
                 "Top up money successfully.");
     }
