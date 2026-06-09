@@ -253,7 +253,7 @@ public class AccountServiceimpl implements AccountService {
         Account account = accountRepository.findAccountByEmail(loginInfoApi.email());
 
         if (account == null || !account.getPassword().equals(loginInfoApi.password())) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT);
         }
 
         String accessToken = tokenService.generateAccessToken(account);
@@ -295,7 +295,7 @@ public class AccountServiceimpl implements AccountService {
         Account account = tokenService.getAccountByToken(token);
 
         if (account == null) {
-            throw new NullPointerException();
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT);
         }
 
         double previous_amount = account.getBalance();
@@ -356,7 +356,7 @@ public class AccountServiceimpl implements AccountService {
         Account account = tokenService.getAccountByToken(token);
 
         if (account == null) {
-            throw new NullPointerException();
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT);
         }
 
         double previous_amount = account.getBalance();
@@ -389,7 +389,7 @@ public class AccountServiceimpl implements AccountService {
         apiName = "/account/transfer";
 
         if (account == null) {
-            throw new NullPointerException();
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT);
         }
 
         Account receiver = accountRepository.findAccountByPhoneNumber(transferMoneyInfoApi.receiver_phone());
@@ -399,7 +399,7 @@ public class AccountServiceimpl implements AccountService {
 
         if (receiver == null) {
             System.out.println("Receipient not found.");
-            throw new NullPointerException();
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT);
         }
 
         double receiverPreviousAmount = receiver.getBalance();
@@ -446,7 +446,7 @@ public class AccountServiceimpl implements AccountService {
         apiName = "/account/topup";
 
         if (account == null) {
-            throw new NullPointerException();
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT);
         }
 
         double previous_amount = account.getBalance();
