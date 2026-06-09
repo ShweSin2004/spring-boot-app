@@ -1,6 +1,5 @@
 package com.talent.batch11.springbootapp.dto.requestApi;
 
-import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
@@ -22,7 +21,7 @@ public record RegisterInfoApi(
         String confirmPassword,
 
         @NotNull
-        @Max(value = 11)
+        @Size(max = 11)
         String phoneNumber,
 
         String address) {

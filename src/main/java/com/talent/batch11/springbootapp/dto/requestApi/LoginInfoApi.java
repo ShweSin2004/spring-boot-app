@@ -1,6 +1,5 @@
 package com.talent.batch11.springbootapp.dto.requestApi;
 
-import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
