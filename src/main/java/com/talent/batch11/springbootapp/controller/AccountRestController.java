@@ -4,7 +4,6 @@ import com.talent.batch11.springbootapp.dto.requestApi.*;
 import com.talent.batch11.springbootapp.exception.CommonResponse;
 import com.talent.batch11.springbootapp.service.AccountService;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

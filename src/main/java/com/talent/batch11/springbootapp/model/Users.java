@@ -3,7 +3,6 @@ package com.talent.batch11.springbootapp.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-
 @Entity
 @Data
 public class Users {
