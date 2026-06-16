@@ -9,7 +9,6 @@ import com.talent.batch11.springbootapp.exception.CommonResponse;
 import com.talent.batch11.springbootapp.model.Account;
 import java.util.List;
 
-import com.talent.batch11.springbootapp.model.Transaction;
 import com.talent.batch11.springbootapp.dto.requestApi.RegisterInfoApi;
 import com.talent.batch11.springbootapp.dto.requestApi.LoginInfoApi;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +16,6 @@ import org.springframework.http.ResponseEntity;
 public interface AccountService {
     public void saveAccount(Account account);
     public Account findByEmail(String email);
-    public Account findByPhone(String phone_number);
     public void updateMoney(double updatedMoney, String email);
     public void deleteAcc(Account account);
 
@@ -31,11 +29,7 @@ public interface AccountService {
 
     public ResponseEntity<CommonResponse> getAccountInfo(String authHeader);
 
-    public Account getAccountById(long id);
-
     public List<Account> getAllAccounts();
-
-
 
 
     public ResponseEntity<CommonResponse> handleLoginRequest(LoginInfoApi loginInfoApi);
@@ -44,5 +38,5 @@ public interface AccountService {
     public ResponseEntity<CommonResponse> withdrawMoneyApi(String authHeader, ServiceRequestApi serviceRequestApi);
     public ResponseEntity<CommonResponse> transferMoneyApi(String authHeader, TransferMoneyInfoApi transferMoneyInfoApi);
     public ResponseEntity<CommonResponse> topUpApi(String authHeader, ServiceRequestApi serviceRequestApi);
-
+    public ResponseEntity<CommonResponse> logoutApi(String authHeader);
 }

@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 public interface TransactionService {
-    public void saveTransactions(Transaction transaction);
 
     public List<Transaction> getAllTransactions();
 

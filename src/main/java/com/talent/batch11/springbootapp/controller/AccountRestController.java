@@ -3,8 +3,7 @@ package com.talent.batch11.springbootapp.controller;
 import com.talent.batch11.springbootapp.dto.requestApi.*;
 import com.talent.batch11.springbootapp.exception.CommonResponse;
 import com.talent.batch11.springbootapp.service.AccountService;
-import com.talent.batch11.springbootapp.service.TokenService;
-import com.talent.batch11.springbootapp.service.TransactionService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import org.slf4j.LoggerFactory;
@@ -15,7 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
 
 @RestController
-@RequestMapping("/account")
+@RequestMapping("/accounts")
+@Tag(name = "Account", description = "Log in/register to be able to use the other services")
 public class AccountRestController {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -35,39 +35,14 @@ public class AccountRestController {
         return accountService.getAccountInfo(authHeader);
     }
 
-    @PostMapping("/register")
+    @PostMapping("/registration")
     public ResponseEntity<CommonResponse> register(@Valid @RequestBody RegisterInfoApi registerInfo){
         logger.info("[[Reached register controller]]");
         return accountService.registerApi(registerInfo);
     }
 
-    @PostMapping("/withdraw")
-    public ResponseEntity<CommonResponse> withdraw(@RequestHeader("Authorization") String authHeader,
-                                   @RequestBody ServiceRequestApi serviceRequestApi){
-        logger.info("[[Reached withdraw controller]]");
-        return accountService.withdrawMoneyApi(authHeader, serviceRequestApi);
-    }
-
-    @PostMapping("/deposit")
-    public ResponseEntity<CommonResponse> deposit(@RequestHeader("Authorization") String authHeader, @RequestBody ServiceRequestApi serviceRequestApi){
-        logger.info("[[Reached deposit controller]]");
-        return accountService.depositMoneyApi(authHeader, serviceRequestApi);
-    }
-
-    @PostMapping("/topup")
-    public ResponseEntity<CommonResponse> topUp(@RequestHeader("Authorization") String authHeader, @RequestBody ServiceRequestApi serviceRequestApi){
-        logger.info("[[Reached topup controller]]");
-        return accountService.topUpApi(authHeader, serviceRequestApi);
-    }
-
-    @PostMapping("/transfer")
-    public ResponseEntity<CommonResponse> transfer(@RequestHeader("Authorization") String authHeader, @RequestBody TransferMoneyInfoApi transferMoneyInfo){
-        logger.info("[[Reached transfer controller]]");
-        return accountService.transferMoneyApi(authHeader, transferMoneyInfo);
-    }
-
     @PostMapping("/logout")
-    public ResponseEntity logout(@RequestHeader String apiKey, HttpSession session) {
-        return ResponseEntity.ok("Unfinished");
+    public ResponseEntity<CommonResponse> logout(@RequestHeader("Authorization") String authHeader) {
+        return accountService.logoutApi(authHeader);
     }
 }

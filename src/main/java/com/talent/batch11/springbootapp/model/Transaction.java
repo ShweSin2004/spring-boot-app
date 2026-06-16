@@ -5,7 +5,6 @@ import com.talent.batch11.springbootapp.model.enumDemo.TransactionType;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.ToString;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity

@@ -1,7 +1,6 @@
 package com.talent.batch11.springbootapp.exception;
 
 import lombok.Data;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatusCode;
 
 import java.time.LocalDateTime;

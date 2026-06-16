@@ -31,12 +31,6 @@ public class TransactionServiceimpl implements TransactionService {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
-    public void saveTransactions(Transaction transaction) {
-        System.out.println("Saving transaction." + transaction);
-        transactionRepository.save(transaction);
-    }
-
-    @Override
     public List<Transaction> getAllTransactions() {
         return transactionRepository.findAll();
     }

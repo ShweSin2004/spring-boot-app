@@ -1,6 +1,5 @@
 package com.talent.batch11.springbootapp.exception;
 
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 

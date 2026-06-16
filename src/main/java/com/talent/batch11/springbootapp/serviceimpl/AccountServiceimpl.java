@@ -56,11 +56,6 @@ public class AccountServiceimpl implements AccountService {
     }
 
     @Override
-    public Account findByPhone(String phone_number) {
-        return accountRepository.findAccountByPhoneNumber(phone_number);
-    }
-
-    @Override
     @Transactional
     public void updateMoney(double updatedMoney, String email) {
         accountRepository.findAccountByEmail(email).setBalance(updatedMoney);
@@ -232,16 +227,9 @@ public class AccountServiceimpl implements AccountService {
     }
 
     @Override
-    public Account getAccountById(long id) {
-        return accountRepository.findAccountById(id);
-    }
-
-
-    @Override
     public List<Account> getAllAccounts() {
         return accountRepository.findAll();
     }
-
 
     @Override
     @Transactional
@@ -470,4 +458,11 @@ public class AccountServiceimpl implements AccountService {
                 "Top up money successfully.");
     }
 
+    @Override
+    public ResponseEntity<CommonResponse> logoutApi(String authHeader) {
+        apiName = "/account/logout";
+
+        return ResponseUtils.makeCommonResponse(apiName, HttpStatus.OK, null, Boolean.TRUE,
+                "Logged out successfully.");
+    }
 }
